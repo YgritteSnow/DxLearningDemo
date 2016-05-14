@@ -47,7 +47,7 @@ void ModelManager::PreRender()
 
 void ModelManager::Render()
 {
-	m_device->Clear( 0, NULL, D3DCLEAR_TARGET , D3DCOLOR_XRGB(100, 200, 100), 1.0f, 0 );
+	m_device->Clear( 0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER , D3DCOLOR_XRGB(100, 200, 100), 1.0f, 0 );
 	m_device->BeginScene();
 	for( auto it = m_vec_model.begin(); it != m_vec_model.end(); ++it )
 	{

@@ -45,6 +45,8 @@ HRESULT InitD3d( HWND hwnd )
 	dp.Windowed = true;
 	dp.BackBufferFormat = D3DFMT_UNKNOWN;
 	dp.SwapEffect = D3DSWAPEFFECT_DISCARD;
+	dp.EnableAutoDepthStencil = TRUE;
+	dp.AutoDepthStencilFormat = D3DFMT_D16;
 
 	if( FAILED( g_d3d->CreateDevice(
 		D3DADAPTER_DEFAULT, 

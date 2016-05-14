@@ -74,9 +74,9 @@ void Model::PreRender( LPDIRECT3DDEVICE9 device )
 void Model::Render( LPDIRECT3DDEVICE9 device )
 {
 	// Ìî³ä
-	device->SetRenderState( D3DRS_FILLMODE, D3DFILL_WIREFRAME);
+	device->SetRenderState( D3DRS_FILLMODE, D3DFILL_SOLID);
 	// ±³ÃæÏûÒþ
-	device->SetRenderState( D3DRS_CULLMODE, D3DCULL_NONE );
+	device->SetRenderState( D3DRS_CULLMODE, D3DCULL_CW );
 
  	device->SetStreamSource( 0, m_vb, 0, sizeof(ModelVertexStruct) );
 	device->SetFVF( ModelVertexStruct::FVF );
