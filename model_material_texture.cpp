@@ -1,5 +1,7 @@
 #include "model_material_texture.h"
 
+#define TEX_FILE_PATH L"tex_alpha.png"
+
 DWORD MtlTexVertex::FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_DIFFUSE | D3DFVF_TEX1;
 
 void ModelWithMaterialTexture::Config()
@@ -23,7 +25,7 @@ void ModelWithMaterialTexture::Config()
 void ModelWithMaterialTexture::PreRender( LPDIRECT3DDEVICE9 device )
 {
 	if( FAILED( D3DXCreateTextureFromFile(
-		device, L"tex.jpg", &m_ptex ) ) )
+		device, TEX_FILE_PATH, &m_ptex ) ) )
 		exit(0);
 
 	ModelWithMaterial::PreRender( device );

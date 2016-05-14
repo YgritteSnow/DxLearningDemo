@@ -71,22 +71,26 @@
     <ClCompile Include="dxdemo.cpp" />
     <ClCompile Include="event_handle_base.h" />
     <ClCompile Include="light.cpp" />
+    <ClCompile Include="light_point.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="mesh_factory.cpp" />
     <ClCompile Include="model.cpp" />
     <ClCompile Include="model_material.cpp" />
     <ClCompile Include="model_material_texture.cpp" />
+    <ClCompile Include="model_material_texture_alpha.cpp" />
     <ClCompile Include="terrain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
     <ClInclude Include="camera_simple_move.h" />
     <ClInclude Include="light.h" />
+    <ClInclude Include="light_point.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="mesh_factory.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="model_material.h" />
     <ClInclude Include="model_material_texture.h" />
+    <ClInclude Include="model_material_texture_alpha.h" />
     <ClInclude Include="render_object_base.h" />
     <ClInclude Include="terrain.h" />
   </ItemGroup>

@@ -14,9 +14,9 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 	m_vec_model.clear();
 	CameraSimpleMove* t_cam = new CameraSimpleMove();
 	m_vec_model.push_back( t_cam );
-	m_vec_model.push_back( new Light() );
+	m_vec_model.push_back( new LightPoint() );
 	m_vec_model.push_back( new Terrain() );
-	m_vec_model.push_back( new ModelWithMaterialTexture() );
+	m_vec_model.push_back( new ModelWithMaterialTextureAlpha() );
 
 	m_vec_eventhandle.clear();
 	m_vec_eventhandle.push_back( t_cam );

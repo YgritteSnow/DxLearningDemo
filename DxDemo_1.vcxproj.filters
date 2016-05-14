@@ -48,6 +48,12 @@
     <ClCompile Include="model_material_texture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="light_point.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="model_material_texture_alpha.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mesh_factory.h">
@@ -78,6 +84,12 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="model_material_texture.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="light_point.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="model_material_texture_alpha.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

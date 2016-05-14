@@ -15,7 +15,7 @@ public:
 	virtual void PreRender( LPDIRECT3DDEVICE9 device );
 	virtual void Render( LPDIRECT3DDEVICE9 device );
 
-private:
+protected:
 	D3DLIGHT9 m_light;
 };
 

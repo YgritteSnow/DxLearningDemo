@@ -4,11 +4,13 @@
 #include "model.h"
 #include "model_material.h"
 #include "model_material_texture.h"
+#include "model_material_texture_alpha.h"
 
 #include "camera.h"
 #include "camera_simple_move.h"
 
 #include "light.h"
+#include "light_point.h"
 
 #include "terrain.h"
 
