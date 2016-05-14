@@ -11,11 +11,15 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 {
 	m_device = device;
 	
-	m_vec_model.push_back( new CameraSimpleMove() );
+	m_vec_model.clear();
+	CameraSimpleMove* t_cam = new CameraSimpleMove();
+	m_vec_model.push_back( t_cam );
 	m_vec_model.push_back( new Light() );
 	m_vec_model.push_back( new Terrain() );
-
 	m_vec_model.push_back( new ModelWithMaterial() );
+
+	m_vec_eventhandle.clear();
+	m_vec_eventhandle.push_back( t_cam );
 
 	Config();
 }
@@ -77,10 +81,30 @@ void ModelManager::Update( float delta_time )
 bool ModelManager::OnKeyDown( WPARAM wParam )
 {
 	bool ret = false;
-	for( auto it = m_vec_model.begin(); it != m_vec_model.end(); ++it )
+	for( auto it = m_vec_eventhandle.begin(); it != m_vec_eventhandle.end(); ++it )
 	{
 		ret = ret || (*it)->OnKeyDown( wParam );
 	}
 
+	return ret;
+}
+
+bool ModelManager::HandleLeftMouseButton( bool isDown )
+{
+	bool ret = false;
+	for( auto it = m_vec_eventhandle.begin(); it != m_vec_eventhandle.end(); ++it )
+	{
+		ret = ret || (*it)->HandleMouseDown( isDown );
+	}
+	return ret;
+}
+
+bool ModelManager::HandleMouseMove( int x, int y )
+{
+	bool ret = false;
+	for( auto it = m_vec_eventhandle.begin(); it != m_vec_eventhandle.end(); ++it )
+	{
+		ret = ret || (*it)->HandleMouseMove( x, y );
+	}
 	return ret;
 }

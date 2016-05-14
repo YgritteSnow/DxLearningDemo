@@ -33,10 +33,13 @@ public:
 	float GetCurTime();
 	void Update( float delta_time );
 	bool OnKeyDown( WPARAM wParam );
+	bool HandleLeftMouseButton( bool isDown );
+	bool HandleMouseMove( int x, int y );
 
 private:
 	LPDIRECT3DDEVICE9 m_device;
 	std::vector< RenderObjectBase* > m_vec_model;
+	std::vector< EventHandlerBase* > m_vec_eventhandle;
 
 	double m_last_time;
 };

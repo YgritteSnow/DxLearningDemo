@@ -69,6 +69,7 @@
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="camera_simple_move.cpp" />
     <ClCompile Include="dxdemo.cpp" />
+    <ClCompile Include="event_handle_base.h" />
     <ClCompile Include="light.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="mesh_factory.cpp" />

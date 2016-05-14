@@ -80,10 +80,10 @@ void PaintMesh( VertexStruct*& vbuffer, const int& vcount )
 template <typename VertexStruct>
 void GenerateTerrainMeshByFunc( VertexStruct*& vbuffer, int& vcount, WORD*& ibuffer, int& icount, float (*pf)(float, float) )
 {
-	int x_count = 2;
-	int y_count = 2;
-	float x_range = 3.f;
-	float y_range = 3.f;
+	int x_count = 9;
+	int y_count = 9;
+	float x_range = 10.f;
+	float y_range = 10.f;
 
 	vcount = ( x_count + 1 ) * ( y_count + 1 );
 	vbuffer = new VertexStruct[vcount];

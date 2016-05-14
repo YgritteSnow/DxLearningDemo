@@ -2,25 +2,39 @@
 
 void CameraSimpleMove::Config()
 {
-	m_eyepos = D3DXVECTOR3( 0.f, 0.f, -5.f );
-	m_eyeypr = D3DXVECTOR3( 3.14f, 0.f, 0.f );
-	D3DXMatrixTranslation( &m_viewMat, m_eyepos.x, m_eyepos.y, m_eyepos.z );
-	D3DXMatrixRotationYawPitchRoll( &m_rotMat, m_eyeypr.x, m_eyeypr.y, m_eyeypr.z );
-	D3DXMatrixMultiply( &m_viewMat, &m_viewMat, &m_rotMat );
+	m_move_speed = 0.05f;
+	m_mouse_speed = 0.0005f;
+
+	m_eyepos = D3DXVECTOR3( 0.f, -2.f, 5.f );
+	m_eyeypr = D3DXVECTOR3(0.f, 0.f, 0.f );
+	ReCalViewMat();
 
 	Camera::Config();
 }
-bool CameraSimpleMove::OnKeyMoveDown( int x, int y, int z )
+
+void CameraSimpleMove::ReCalViewMat()
 {
-	D3DXVECTOR3 t_transvec;
-	D3DXVec3TransformNormal( &t_transvec, &(D3DXVECTOR3(0.f, 0.f, y * m_move_speed)), &m_viewMat );
-	m_eyepos += t_transvec;
-
-	m_eyeypr += D3DXVECTOR3( (float)x, 0, (float)z ) * m_move_speed;
-
 	D3DXMatrixTranslation( &m_viewMat, m_eyepos.x, m_eyepos.y, m_eyepos.z );
 	D3DXMatrixRotationYawPitchRoll( &m_rotMat, m_eyeypr.x, m_eyeypr.y, m_eyeypr.z );
 	D3DXMatrixMultiply( &m_viewMat, &m_viewMat, &m_rotMat );
+}
+
+bool CameraSimpleMove::OnKeyMoveDown( int x, int y, int z )
+{
+	D3DXVECTOR3 t_transvec = D3DXVECTOR3( (float)x, (float)z, (float)y ) * (-m_move_speed);
+	D3DXMATRIX t_mat;
+	D3DXMatrixInverse( &t_mat, NULL, &m_viewMat );
+	D3DXVec3TransformNormal( &t_transvec, &t_transvec, &t_mat );
+	m_eyepos += t_transvec;
+	ReCalViewMat();
+
+	return false;
+}
+
+bool CameraSimpleMove::OnMouseDownMove( int x, int y )
+{
+	m_eyeypr += D3DXVECTOR3( (float)x, (float)y, 0.f ) * m_mouse_speed;
+	ReCalViewMat();
 
 	return false;
 }

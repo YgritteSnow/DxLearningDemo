@@ -14,7 +14,6 @@ public:
 	virtual void Config() = 0;
 	virtual void PreRender( LPDIRECT3DDEVICE9 device ) = 0;
 	virtual void Render( LPDIRECT3DDEVICE9 device ) = 0;
-	virtual bool OnKeyDown( WPARAM wParam ){return false;};
 };
 
 #endif

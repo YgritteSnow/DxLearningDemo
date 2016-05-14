@@ -66,6 +66,18 @@ LRESULT CALLBACK MyWinProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 	case WM_PAINT:
 		break;
 
+	case WM_LBUTTONDOWN:
+		g_mng->HandleLeftMouseButton( true );
+		break;
+
+	case WM_LBUTTONUP:
+		g_mng->HandleLeftMouseButton( false );
+		break;
+
+	case WM_MOUSEMOVE:
+		g_mng->HandleMouseMove( LOWORD( lParam ), HIWORD( lParam ) );
+		break;
+
 	case WM_KEYDOWN:
 		{
 			switch( wParam )

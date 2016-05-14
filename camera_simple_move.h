@@ -9,11 +9,18 @@ public:
 	CameraSimpleMove(){}
 
 	virtual void Config();
+
+	virtual bool OnMouseDownMove( int x, int y );
 	virtual bool OnKeyMoveDown( int x, int y, int z );
 
 private:
+	void ReCalViewMat();
+
 	D3DXVECTOR3 m_eyepos;
 	D3DXVECTOR3 m_eyeypr;
+	float m_move_speed;
+	float m_mouse_speed;
+
 	D3DXMATRIX m_rotMat;
 };
 

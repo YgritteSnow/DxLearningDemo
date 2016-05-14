@@ -42,6 +42,9 @@
     <ClCompile Include="terrain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="event_handle_base.h">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mesh_factory.h">
@@ -65,10 +68,10 @@
     <ClInclude Include="model_material.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="render_object_base.h">
+    <ClInclude Include="terrain.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="terrain.h">
+    <ClInclude Include="render_object_base.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

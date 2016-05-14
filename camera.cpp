@@ -6,8 +6,7 @@
 
 void Camera::Config()
 {
-	D3DXMatrixPerspectiveFovLH( &m_projMat, 1.2f, 1.0f, 1.0f, 100.f );
-	m_move_speed = 0.05f;
+	D3DXMatrixPerspectiveFovLH( &m_projMat, 1.7f, 1.2f, 1.0f, 100.f );
 }
 
 void Camera::PreRender( LPDIRECT3DDEVICE9 device )
