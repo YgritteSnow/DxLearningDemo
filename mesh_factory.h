@@ -27,13 +27,23 @@ void GenerateBallMesh( VertexStruct*& vbuffer, int& vcount, WORD*& ibuffer, int&
 		for( int i = 0; i < theta_count; ++i )	// 绕着y轴旋转一圈
 		{
 			float theta = i * theta_step;
+
+			// D3DFVF_XYZ
 			vbuffer[j * theta_count + i]._x = cos(theta) * xz_radius;
 			vbuffer[j * theta_count + i]._y = y;
 			vbuffer[j * theta_count + i]._z = sin(theta) * xz_radius;
 
+			// D3DFVF_NORMAL
 			vbuffer[j * theta_count + i]._nx = vbuffer[j * theta_count + i]._x;
 			vbuffer[j * theta_count + i]._ny = vbuffer[j * theta_count + i]._y;
 			vbuffer[j * theta_count + i]._nz = vbuffer[j * theta_count + i]._z;
+
+			// D3DFVF_DIFFUSE
+			// 由下边的函数随机生成颜色
+
+			// D3DFVF_TEX1
+			vbuffer[j * theta_count + i]._u = (float)j / fai_count;
+			vbuffer[j * theta_count + i]._v = (float)i / theta_count;
 		}
 	}
 
@@ -78,12 +88,12 @@ void PaintMesh( VertexStruct*& vbuffer, const int& vcount )
 }
 
 template <typename VertexStruct>
-void GenerateTerrainMeshByFunc( VertexStruct*& vbuffer, int& vcount, WORD*& ibuffer, int& icount, float (*pf)(float, float) )
+void GenerateTerrainMeshByFunc( VertexStruct*& vbuffer, int& vcount, WORD*& ibuffer, int& icount, float (*pf)(float, float), float range_x, float range_y )
 {
 	int x_count = 9;
 	int y_count = 9;
-	float x_range = 10.f;
-	float y_range = 10.f;
+	range_x = 10.f;
+	range_y = 10.f;
 
 	vcount = ( x_count + 1 ) * ( y_count + 1 );
 	vbuffer = new VertexStruct[vcount];
@@ -92,11 +102,25 @@ void GenerateTerrainMeshByFunc( VertexStruct*& vbuffer, int& vcount, WORD*& ibuf
 	{
 		for( int y = 0; y <= y_count; ++y )
 		{
-			float x_real = (((float)x / x_count) - 0.5f ) * x_range;
-			float y_real = (((float)y / y_count) - 0.5f ) * y_range;
+			float x_real = (((float)x / x_count) - 0.5f ) * 2 * range_x;
+			float y_real = (((float)y / y_count) - 0.5f ) * 2 * range_y;
+
+			// D3DFVF_XYZ
 			vbuffer[x * (y_count + 1) + y]._x = x_real;
 			vbuffer[x * (y_count + 1) + y]._z = y_real;
 			vbuffer[x * (y_count + 1) + y]._y = (*pf)(x_real, y_real);
+
+			// D3DFVF_NORMAL
+			vbuffer[x * (y_count + 1) + y]._nx = 0.f;
+			vbuffer[x * (y_count + 1) + y]._ny = 1.f;
+			vbuffer[x * (y_count + 1) + y]._nz = 0.f;
+
+			// D3FVF_COLOR
+			// 由下边的函数做
+
+			// D3DFVF_TEX1
+			vbuffer[x * (y_count + 1) + y]._u = (float)x / x_count;
+			vbuffer[x * (y_count + 1) + y]._v = (float)y / y_count;
 		}
 	}
 

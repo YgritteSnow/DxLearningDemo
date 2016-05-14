@@ -3,6 +3,7 @@
 
 #include "model.h"
 #include "model_material.h"
+#include "model_material_texture.h"
 
 #include "camera.h"
 #include "camera_simple_move.h"

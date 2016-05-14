@@ -4,7 +4,7 @@
 /************************************************************************/
 /*                                                                      */
 /************************************************************************/
-DWORD ModelVertex::FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_DIFFUSE;
+DWORD ModelVertex::FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_DIFFUSE | D3DFVF_TEX1;
 
 Model::~Model()
 {
@@ -26,8 +26,6 @@ Model::~Model()
 
 void Model::Config()
 {
-	m_vb = NULL;
-	m_ib = NULL;
 	GenerateBallMesh<ModelVertexStruct>( m_vertex_arr, m_vertex_size, m_index_arr, m_index_size, 1.f );
 	PaintMesh<ModelVertexStruct>( m_vertex_arr, m_vertex_size );
 

@@ -18,18 +18,21 @@ struct ModelVertex// : public PosVertex
 	ModelVertex()
 		:_x(0), _y(0), _z(0), 
 		_nx(0), _ny(0), _nz(0), 
-		_color(0x0){}
+		_color(0x0), 
+		_u(0), _v(0)
+	{}
 
 	float _x, _y, _z;
 	float _nx, _ny, _nz;
 	DWORD _color;
+	float _u, _v;
 	static DWORD FVF;
 };
 
 class Model : public RenderObjectBase
 {
 public:
-	Model(){};
+	Model():m_vb(NULL), m_ib(NULL), m_vertex_arr(NULL), m_index_arr(NULL){};
 	virtual ~Model();
 	virtual void PreRender( LPDIRECT3DDEVICE9 device );
 	virtual void Render( LPDIRECT3DDEVICE9 device );

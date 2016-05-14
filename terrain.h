@@ -7,5 +7,9 @@ class Terrain : public Model
 {
 public:
 	void Config();
+
+private:
+	float m_range_x;
+	float m_range_y;
 };
 #endif

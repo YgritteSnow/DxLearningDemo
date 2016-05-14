@@ -45,6 +45,9 @@
     <ClCompile Include="event_handle_base.h">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="model_material_texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mesh_factory.h">
@@ -72,6 +75,9 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="render_object_base.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="model_material_texture.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
