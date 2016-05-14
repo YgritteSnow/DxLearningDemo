@@ -23,7 +23,7 @@ void ModelWithMaterialTexture::Config()
 void ModelWithMaterialTexture::PreRender( LPDIRECT3DDEVICE9 device )
 {
 	if( FAILED( D3DXCreateTextureFromFile(
-		device, L"aaa.png", &m_ptex ) ) )
+		device, L"tex.jpg", &m_ptex ) ) )
 		exit(0);
 
 	ModelWithMaterial::PreRender( device );

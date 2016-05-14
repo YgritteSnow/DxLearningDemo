@@ -88,12 +88,12 @@ void PaintMesh( VertexStruct*& vbuffer, const int& vcount )
 }
 
 template <typename VertexStruct>
-void GenerateTerrainMeshByFunc( VertexStruct*& vbuffer, int& vcount, WORD*& ibuffer, int& icount, float (*pf)(float, float), float range_x, float range_y )
+void GenerateTerrainMeshByFunc( VertexStruct*& vbuffer, int& vcount, WORD*& ibuffer, int& icount, float (*pf)(float, float), void (*pdf)(float, float, float&, float&, float&), float range_x, float range_y )
 {
-	int x_count = 9;
-	int y_count = 9;
-	range_x = 10.f;
-	range_y = 10.f;
+	int x_count = 100;
+	int y_count = 100;
+	range_x = 5.f;
+	range_y = 5.f;
 
 	vcount = ( x_count + 1 ) * ( y_count + 1 );
 	vbuffer = new VertexStruct[vcount];
@@ -111,9 +111,7 @@ void GenerateTerrainMeshByFunc( VertexStruct*& vbuffer, int& vcount, WORD*& ibuf
 			vbuffer[x * (y_count + 1) + y]._y = (*pf)(x_real, y_real);
 
 			// D3DFVF_NORMAL
-			vbuffer[x * (y_count + 1) + y]._nx = 0.f;
-			vbuffer[x * (y_count + 1) + y]._ny = 1.f;
-			vbuffer[x * (y_count + 1) + y]._nz = 0.f;
+			(*pdf)( x_real, y_real, vbuffer[x * (y_count + 1) + y]._nx, vbuffer[x * (y_count + 1) + y]._nz, vbuffer[x * (y_count + 1) + y]._ny );
 
 			// D3FVF_COLOR
 			// 由下边的函数做
@@ -121,6 +119,7 @@ void GenerateTerrainMeshByFunc( VertexStruct*& vbuffer, int& vcount, WORD*& ibuf
 			// D3DFVF_TEX1
 			vbuffer[x * (y_count + 1) + y]._u = (float)x / x_count;
 			vbuffer[x * (y_count + 1) + y]._v = (float)y / y_count;
+
 		}
 	}
 
