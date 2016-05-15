@@ -83,7 +83,7 @@ void PaintMesh( VertexStruct*& vbuffer, const int& vcount )
 	srand((unsigned)time(0));
 	for( int i = 0; i < vcount; ++i )
 	{
-		vbuffer[i]._color = (( DWORD(rand()) ) << 8) + (( DWORD(rand()) ) << 16) + 0xff;
+		vbuffer[i]._color = (( DWORD(rand()) && 0xffffff ) << 0) + 0xff000000;
 	}
 }
 
