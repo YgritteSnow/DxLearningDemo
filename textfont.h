@@ -20,10 +20,10 @@ public:
 	void PreRender( LPDIRECT3DDEVICE9 device );
 	void Render( LPDIRECT3DDEVICE9 device );
 
-	void SetText( std::wstring t_str );
+	void SetText( std::string t_str );
 
 private:
-	std::wstring m_str;
+	std::string m_str;
 	LPD3DXFONT m_font;
 };
 #endif

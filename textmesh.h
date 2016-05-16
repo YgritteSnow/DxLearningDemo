@@ -19,6 +19,6 @@ public:
 	void Render( LPDIRECT3DDEVICE9 device );
 
 private:
-	std::wstring m_str;
+	std::string m_str;
 };
 #endif

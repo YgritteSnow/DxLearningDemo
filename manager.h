@@ -36,7 +36,7 @@ public:
 
 	
 	float GetCurTime();
-	void Update( float delta_time );
+	void Update();
 	bool OnKeyDown( WPARAM wParam );
 	bool HandleLeftMouseButton( bool isDown );
 	bool HandleMouseMove( int x, int y );
@@ -46,7 +46,7 @@ private:
 	std::vector< RenderObjectBase* > m_vec_model;
 	std::vector< EventHandlerBase* > m_vec_eventhandle;
 
-	double m_last_time;
+	DWORD m_last_time;
 };
 
 #endif

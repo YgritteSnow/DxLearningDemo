@@ -135,11 +135,19 @@ INT WINAPI WinMain( HINSTANCE hinst, HINSTANCE, LPSTR cmdline, INT nCmd )
 			g_mng->PreRender();
 
 			MSG msg;
-			while( GetMessage( &msg, NULL, NULL, NULL ) )
+			ZeroMemory( &msg, sizeof(msg));
+
+			while( msg.message != WM_QUIT )
+			if( PeekMessage( &msg, NULL, NULL, NULL, PM_REMOVE ) )
 			{
-				g_mng->Render();
+
 				TranslateMessage( &msg );
 				DispatchMessage( &msg );
+			}
+			else
+			{
+				g_mng->Render();
+				g_mng->Update();
 			}
 		}
 	}

@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="mesh_factory.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="model.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -58,6 +55,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="textfont.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="global_debug_board.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="global_monitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="global_monitor_fps.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -102,6 +108,15 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="textfont.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="global_monitor.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="global_debug_board.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="global_monitor_fps.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

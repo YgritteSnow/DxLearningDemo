@@ -2,12 +2,17 @@
 #include <Windows.h>
 #pragma comment(lib, "winmm.lib")
 
+#include "global_monitor.h"
+#include "global_debug_board.h"
+
+GlobalMonitorManager g_global_monitor = GlobalMonitorManager();
 
 /************************************************************************/
 /*                                                                      */
 /************************************************************************/
 
 ModelManager::ModelManager( LPDIRECT3DDEVICE9 device ) 
+	:m_last_time(0)
 {
 	m_device = device;
 	
@@ -17,10 +22,14 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 	m_vec_model.push_back( new LightPoint() );
 	m_vec_model.push_back( new Terrain() );
 	m_vec_model.push_back( new ModelWithMaterialTextureAlpha() );
-	m_vec_model.push_back( new FontText() );
+
+	GlobalDebugBoard* t_global_board = new GlobalDebugBoard();
+	m_vec_model.push_back( t_global_board );
 
 	m_vec_eventhandle.clear();
 	m_vec_eventhandle.push_back( t_cam );
+
+	g_global_monitor.SetDisplayBoard( t_global_board );
 
 	Config();
 }
@@ -74,9 +83,16 @@ float ModelManager::GetCurTime()
 	return (float)timeGetTime();
 }
 
-void ModelManager::Update( float delta_time )
+void ModelManager::Update()
 {
+	DWORD new_time = timeGetTime();
 
+	if( m_last_time != 0 )
+	{
+		g_global_monitor.Update( new_time - m_last_time );
+	}
+
+	m_last_time = new_time;
 }
 
 bool ModelManager::OnKeyDown( WPARAM wParam )

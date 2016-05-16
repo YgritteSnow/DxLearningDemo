@@ -16,17 +16,17 @@ FontText::~FontText()
 
 void FontText::Config()
 {
-	m_str = L"ÃÈÃÈßÕ";
+	m_str = "ÃÈÃÈßÕ\nÀ²À²À²À²";
 }
 
 void FontText::PreRender( LPDIRECT3DDEVICE9 device )
 {
 	D3DXFONT_DESC fd;
 	ZeroMemory( &fd, sizeof(fd) );
-	fd.Height = 60;
-	fd.Width = 30;
+	fd.Height = 20;
+	fd.Width = 8;
 	fd.Weight = 400;
-	fd.Italic = true;
+	fd.Italic = false;
 	fd.MipLevels = D3DX_DEFAULT;
 
 	fd.Quality = 0;
@@ -40,7 +40,7 @@ void FontText::PreRender( LPDIRECT3DDEVICE9 device )
 
 void FontText::Render( LPDIRECT3DDEVICE9 device )
 {
-	m_font->DrawTextW(
+	m_font->DrawTextA(
 		NULL, 
 		m_str.c_str(), 
 		m_str.size(), 
@@ -50,7 +50,7 @@ void FontText::Render( LPDIRECT3DDEVICE9 device )
 		);
 }
 
-void FontText::SetText( std::wstring t_str )
+void FontText::SetText( std::string t_str )
 {
 	m_str = t_str;
 }
