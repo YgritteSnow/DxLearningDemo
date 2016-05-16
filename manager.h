@@ -14,6 +14,8 @@
 
 #include "terrain.h"
 
+#include "textfont.h"
+
 #include <vector>
 
 /************************************************************************/
