@@ -21,8 +21,12 @@ public:
 
 	virtual bool OnKeyMoveDown( int x, int y, int z );
 
+	const D3DXMATRIX* GetCamMatrix(){return &m_viewMat;};
+	const D3DXMATRIX* GetInvCamMatrix(){return &m_invViewMat;};
+
 protected:
 	D3DXMATRIX m_viewMat;
+	D3DXMATRIX m_invViewMat;
 	D3DXMATRIX m_projMat;
 };
 

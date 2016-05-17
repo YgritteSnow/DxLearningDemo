@@ -43,8 +43,13 @@ public:
 	bool HandleLeftMouseButton( bool isDown );
 	bool HandleMouseMove( int x, int y );
 
+	static const D3DXMATRIX* GetCameraMatrix();
+	static const D3DXMATRIX* GetInvCameraMatrix();
+
 private:
 	LPDIRECT3DDEVICE9 m_device;
+	static Camera* s_pCamera;
+
 	std::vector< RenderObjectBase* > m_vec_model;
 	std::vector< EventHandlerBase* > m_vec_eventhandle;
 	std::vector< UpdateBase* > m_vec_updater;

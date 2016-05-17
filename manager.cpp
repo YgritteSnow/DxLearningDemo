@@ -5,11 +5,16 @@
 #include "global_monitor.h"
 #include "global_debug_board.h"
 
+#include "ui/ui_base.h"
+
 GlobalMonitorManager g_global_monitor = GlobalMonitorManager();
+
 
 /************************************************************************/
 /*                                                                      */
 /************************************************************************/
+
+Camera* ModelManager::s_pCamera = NULL;
 
 ModelManager::ModelManager( LPDIRECT3DDEVICE9 device ) 
 	:m_last_time(0)
@@ -19,9 +24,13 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 	m_vec_model.clear();
 	CameraSimpleMove* t_cam = new CameraSimpleMove();
 	m_vec_model.push_back( t_cam );
+
+	s_pCamera = t_cam;
+
 	m_vec_model.push_back( new LightPoint() );
 	m_vec_model.push_back( new Terrain() );
 	m_vec_model.push_back( new ModelWithMaterialTextureAlpha() );
+	m_vec_model.push_back( new UIBase() );
 
 	GlobalDebugBoard* t_global_board = new GlobalDebugBoard();
 	m_vec_model.push_back( t_global_board );
@@ -129,4 +138,28 @@ bool ModelManager::HandleMouseMove( int x, int y )
 		ret = ret || (*it)->HandleMouseMove( x, y );
 	}
 	return ret;
+}
+
+const D3DXMATRIX* ModelManager::GetCameraMatrix()
+{
+	if( s_pCamera )
+	{
+		return s_pCamera->GetCamMatrix();
+	}
+	else
+	{
+		return NULL;
+	}
+}
+
+const D3DXMATRIX* ModelManager::GetInvCameraMatrix()
+{
+	if( s_pCamera )
+	{
+		return s_pCamera->GetInvCamMatrix();
+	}
+	else
+	{
+		return NULL;
+	}
 }

@@ -7,7 +7,7 @@
 
 void Camera::Config()
 {
-	D3DXMatrixPerspectiveFovLH( &m_projMat, 1.7f, g_screen_width / float(g_screen_height), 1.0f, 100.f );
+	D3DXMatrixPerspectiveFovLH( &m_projMat, g_fov, g_screen_width / float(g_screen_height), g_zmin, g_zmax );
 }
 
 void Camera::PreRender( LPDIRECT3DDEVICE9 device )
