@@ -28,10 +28,12 @@ public:
 		, m_v_pos_mode(CENTER)
 		, m_h_size_mode(CLIP)
 		, m_v_size_mode(CLIP)
+		, m_h_pos_size_mode(CLIP)
+		, m_v_pos_size_mode(CLIP)
 		, m_h_pos(0.f)
 		, m_v_pos(0.f)
-		, m_h_size(1.f)
-		, m_v_size(1.f)
+		, m_h_size(2.f)
+		, m_v_size(2.f)
 	{};
 	virtual ~UIBase(){};
 
@@ -46,6 +48,13 @@ protected:
 	void RecalMatrix();
 
 private:
+	float GetScaleH();
+	float GetScaleV();
+	float GetPosOffsetH();
+	float GetPosOffsetV();
+	float GetPosH();
+	float GetPosV();
+
 	struct UIVertex
 	{
 		UIVertex()
@@ -65,6 +74,8 @@ private:
 
 	PosMode m_h_pos_mode;
 	PosMode m_v_pos_mode;
+	SizeMode m_h_pos_size_mode;
+	SizeMode m_v_pos_size_mode;
 	SizeMode m_h_size_mode;
 	SizeMode m_v_size_mode;
 

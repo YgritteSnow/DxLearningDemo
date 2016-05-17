@@ -5,7 +5,7 @@ void CameraSimpleMove::Config()
 	m_move_speed = 0.05f;
 	m_mouse_speed = 0.005f;
 
-	m_eyepos = D3DXVECTOR3( 0.f, -2.f, 5.f );
+	m_eyepos = D3DXVECTOR3( 0.f, -7.f, 5.f );
 	m_eyeypr = D3DXVECTOR3(0.f, 0.f, 0.f );
 	ReCalViewMat();
 
