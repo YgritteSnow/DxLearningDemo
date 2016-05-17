@@ -81,6 +81,9 @@
     <ClCompile Include="ui\ui_base.cpp">
       <Filter>源文件\ui</Filter>
     </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mesh_factory.h">
@@ -144,6 +147,9 @@
       <Filter>源文件\ui</Filter>
     </ClInclude>
     <ClInclude Include="update_base.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

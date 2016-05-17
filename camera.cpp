@@ -1,4 +1,5 @@
 #include "camera.h"
+#include "config.h"
 
 /************************************************************************/
 /*                                                                      */
@@ -6,13 +7,13 @@
 
 void Camera::Config()
 {
-	D3DXMatrixPerspectiveFovLH( &m_projMat, 1.7f, 1.2f, 1.0f, 100.f );
+	D3DXMatrixPerspectiveFovLH( &m_projMat, 1.7f, g_screen_width / float(g_screen_height), 1.0f, 100.f );
 }
 
 void Camera::PreRender( LPDIRECT3DDEVICE9 device )
 {
 	device->SetTransform( D3DTS_PROJECTION, &m_projMat );
-	D3DVIEWPORT9 vp = { 0, 0, 600, 400, 0, 1 };
+	D3DVIEWPORT9 vp = { 0, 0, g_screen_width, g_screen_height, 0, 1 };
 	device->SetViewport( &vp );
 }
 

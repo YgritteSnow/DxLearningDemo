@@ -2,6 +2,7 @@
 #pragma comment( lib, "d3d9.lib" )
 
 #include "manager.h"
+#include "config.h"
 
 //#include <tchar.h>
 
@@ -120,7 +121,7 @@ INT WINAPI WinMain( HINSTANCE hinst, HINSTANCE, LPSTR cmdline, INT nCmd )
 		L"classname", 
 		L"caption?...", 
 		WS_OVERLAPPEDWINDOW, 
-		800, 600, 600, 400, 
+		800, 600, g_screen_width, g_screen_height, 
 		NULL, NULL, hinst, 0
 		);
 
