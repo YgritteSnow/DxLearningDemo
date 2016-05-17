@@ -13,7 +13,7 @@ void Camera::Config()
 void Camera::PreRender( LPDIRECT3DDEVICE9 device )
 {
 	device->SetTransform( D3DTS_PROJECTION, &m_projMat );
-	D3DVIEWPORT9 vp = { 0, 0, g_screen_pixel_width, g_screen_pixel_height, 0, 1 };
+	D3DVIEWPORT9 vp = { 0, 0, g_screen_pixel_width, g_screen_pixel_height, 0.f, 1.f };
 	device->SetViewport( &vp );
 }
 

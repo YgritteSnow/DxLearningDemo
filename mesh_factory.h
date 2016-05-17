@@ -39,7 +39,7 @@ void GenerateBallMesh( VertexStruct*& vbuffer, int& vcount, WORD*& ibuffer, int&
 			vbuffer[j * theta_count + i]._nz = vbuffer[j * theta_count + i]._z;
 
 			// D3DFVF_DIFFUSE
-			// 由下边的函数随机生成颜色
+			vbuffer[j * theta_count + i]._color = (DWORD( 0xff * sin(fai) ) << 24) + (DWORD( 0xff * cos(theta) ) << 16) + (DWORD( 0xff * sin(theta) ) << 8) + 0xff;
 
 			// D3DFVF_TEX1
 			vbuffer[j * theta_count + i]._u = (float)j / fai_count;
@@ -114,7 +114,7 @@ void GenerateTerrainMeshByFunc( VertexStruct*& vbuffer, int& vcount, WORD*& ibuf
 			(*pdf)( x_real, y_real, vbuffer[x * (y_count + 1) + y]._nx, vbuffer[x * (y_count + 1) + y]._nz, vbuffer[x * (y_count + 1) + y]._ny );
 
 			// D3FVF_COLOR
-			// 由下边的函数做
+			vbuffer[x * (y_count + 1) + y]._color = (DWORD( 0xff * (*pf)(x_real, y_real) ) << 24) + (DWORD( 0xff * x_real / range_x ) << 16) + (DWORD( 0xff * y_real / range_y ) << 8) + 0xff;
 
 			// D3DFVF_TEX1
 			vbuffer[x * (y_count + 1) + y]._u = (float)x / x_count;

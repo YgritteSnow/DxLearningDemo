@@ -159,12 +159,12 @@ void UIBase::RecalMatrix()
 	t = GetPosH();
 	t = GetPosV();
 	//D3DXMatrixTranslation( &trans_mat, GetPosH(), GetPosV(), g_zmin + 0.00001f );
-	D3DXMatrixTranslation( &trans_mat, 0.f, 0.f, 5.f );
+	D3DXMatrixTranslation( &trans_mat, g_screen_real_width * 0.5f, g_screen_real_height * 0.5f, 1.1f );
 	const D3DXMATRIX* view_mat = ModelManager::GetInvCameraMatrix();
 
 	D3DXMATRIX scale_mat;
 	//D3DXMatrixScaling( &scale_mat, GetScaleH() * 0.5f, GetScaleV() * 0.5f, 1.f );
-	D3DXMatrixScaling( &scale_mat, g_screen_real_width * 0.45f, g_screen_real_height * 0.45f, 1.f );
+	D3DXMatrixScaling( &scale_mat, g_screen_real_width * 0.005f, g_screen_real_height * 0.005f, 1.f );
 
 	D3DXMatrixMultiply( &m_matrix, &trans_mat, view_mat );
 	D3DXMatrixMultiply( &m_matrix, &scale_mat, &m_matrix );

@@ -27,7 +27,6 @@ Model::~Model()
 void Model::Config()
 {
 	GenerateBallMesh<ModelVertexStruct>( m_vertex_arr, m_vertex_size, m_index_arr, m_index_size, 1.f );
-	PaintMesh<ModelVertexStruct>( m_vertex_arr, m_vertex_size );
 
 	D3DXMatrixTranslation( &m_matrix, 0, 0, 0 );
 }
