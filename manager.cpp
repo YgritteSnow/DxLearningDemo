@@ -30,6 +30,8 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 	m_vec_eventhandle.push_back( t_cam );
 
 	g_global_monitor.SetDisplayBoard( t_global_board );
+	m_vec_updater.clear();
+	m_vec_updater.push_back( &g_global_monitor );
 
 	Config();
 }
@@ -89,7 +91,10 @@ void ModelManager::Update()
 
 	if( m_last_time != 0 )
 	{
-		g_global_monitor.Update( new_time - m_last_time );
+		for( auto it = m_vec_updater.begin(); it != m_vec_updater.end(); ++it )
+		{
+			(*it)->Update( new_time - m_last_time );
+		}
 	}
 
 	m_last_time = new_time;

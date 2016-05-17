@@ -83,6 +83,9 @@
     <ClCompile Include="model_material_texture.cpp" />
     <ClCompile Include="model_material_texture_alpha.cpp" />
     <ClCompile Include="terrain.cpp" />
+    <ClCompile Include="texture_editor\texture_display_board.cpp" />
+    <ClCompile Include="texture_editor\texture_editor.cpp" />
+    <ClCompile Include="ui\ui_base.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
@@ -102,6 +105,10 @@
     <ClInclude Include="model_material_texture_alpha.h" />
     <ClInclude Include="render_object_base.h" />
     <ClInclude Include="terrain.h" />
+    <ClInclude Include="texture_editor\texture_display_board.h" />
+    <ClInclude Include="texture_editor\texture_editor.h" />
+    <ClInclude Include="ui\ui_base.h" />
+    <ClInclude Include="update_base.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

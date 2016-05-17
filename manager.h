@@ -16,6 +16,8 @@
 
 #include "textfont.h"
 
+#include "update_base.h"
+
 #include <vector>
 
 /************************************************************************/
@@ -45,6 +47,7 @@ private:
 	LPDIRECT3DDEVICE9 m_device;
 	std::vector< RenderObjectBase* > m_vec_model;
 	std::vector< EventHandlerBase* > m_vec_eventhandle;
+	std::vector< UpdateBase* > m_vec_updater;
 
 	DWORD m_last_time;
 };

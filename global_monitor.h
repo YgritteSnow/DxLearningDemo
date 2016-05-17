@@ -5,7 +5,9 @@
 #include <string>
 #include <Windows.h>
 
-class GlobalMonitorBase
+#include "update_base.h"
+
+class GlobalMonitorBase : public UpdateBase
 {
 public:
 	GlobalMonitorBase(){};
@@ -26,7 +28,7 @@ public:
 	virtual void SetBoardText( std::string ) = 0;
 };
 
-class GlobalMonitorManager
+class GlobalMonitorManager : public UpdateBase
 {
 public:
 	GlobalMonitorManager();
@@ -35,7 +37,7 @@ public:
 	typedef void (*p_setTextFunc)(std::string);
 	void SetDisplayBoard( GlobalMonitorBoardInterface* p_board );
 
-	void Update( DWORD timeDelta );
+	virtual void Update( DWORD timeDelta );
 	void AppendMonitor( GlobalMonitorBase* monitor );
 
 private:
