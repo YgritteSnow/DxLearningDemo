@@ -45,6 +45,7 @@ public:
 
 	static const D3DXMATRIX* GetCameraMatrix();
 	static const D3DXMATRIX* GetInvCameraMatrix();
+	static const D3DXMATRIX* GetProjMatrix();
 
 private:
 	LPDIRECT3DDEVICE9 m_device;

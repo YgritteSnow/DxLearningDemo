@@ -30,13 +30,13 @@ void UIBase::PreRender( LPDIRECT3DDEVICE9 device )
 
 	UIVertex* verticies = NULL;
 	UIVertex v_arr[c_vertex_size];
-	v_arr[0] = UIVertex( -1.0f, -1.0f, 0.f, 0xffffffff, 0.f, 0.f );
-	v_arr[1] = UIVertex( 1.0f, 1.0f, 0.f, 0xffffffff, 1.f, 1.f );
-	v_arr[2] = UIVertex( -1.0f, 1.0f, 0.f, 0xffffffff, 0.f, 1.f );
+	v_arr[0] = UIVertex( -1.0f, -1.0f, 1.f, 0xffffffff, 0.f, 0.f );
+	v_arr[1] = UIVertex( 1.0f, 1.0f, 1.f, 0xffffffff, 1.f, 1.f );
+	v_arr[2] = UIVertex( -1.0f, 1.0f, 1.f, 0xffffffff, 0.f, 1.f );
 
-	v_arr[3] = UIVertex( -1.0f, -1.0f, 0.f, 0xffffffff, 0.f, 0.f );
-	v_arr[4] = UIVertex( 1.0f, -1.0f, 0.f, 0xffffffff, 1.f, 0.f );
-	v_arr[5] = UIVertex( 1.0f, 1.0f, 0.f, 0xffffffff, 1.f, 1.f );
+	v_arr[3] = UIVertex( -1.0f, -1.0f, 1.f, 0xffffffff, 0.f, 0.f );
+	v_arr[4] = UIVertex( 1.0f, -1.0f, 1.f, 0xffffffff, 1.f, 0.f );
+	v_arr[5] = UIVertex( 1.0f, 1.0f, 1.f, 0xffffffff, 1.f, 1.f );
 
 	m_vb->Lock( 0, 0, (void **) &verticies, 0 );
 	memcpy( verticies, v_arr, c_vertex_size * sizeof( UIVertex ) );
@@ -51,12 +51,17 @@ void UIBase::Render( LPDIRECT3DDEVICE9 device )
 	device->GetRenderState( D3DRS_LIGHTING, &isLight );
 	device->SetRenderState( D3DRS_LIGHTING, false );
 
+	device->SetRenderState( D3DRS_CULLMODE, D3DCULL_NONE );
+	//device->SetRenderState( D3DRS_FILLMODE, D3DFILL_WIREFRAME );
+
 	device->SetTexture( 0, m_tex );
 	device->SetStreamSource( 0, m_vb, 0, sizeof(UIVertex) );
 	device->SetFVF( UIVertex::FVF );
 	device->SetTransform( D3DTS_WORLD, &m_matrix );
 	device->DrawPrimitive( D3DPT_TRIANGLELIST, 0, 2 );
 
+	device->SetRenderState( D3DRS_CULLMODE, D3DCULL_CCW );
+	//device->SetRenderState( D3DRS_FILLMODE, D3DFILL_SOLID );
 	device->SetRenderState( D3DRS_LIGHTING, isLight );
 }
 
@@ -160,12 +165,22 @@ void UIBase::RecalMatrix()
 	t = GetPosV();
 	//D3DXMatrixTranslation( &trans_mat, GetPosH(), GetPosV(), g_zmin + 0.00001f );
 	D3DXMatrixTranslation( &trans_mat, g_screen_real_width * 0.5f, g_screen_real_height * 0.5f, 1.1f );
-	const D3DXMATRIX* view_mat = ModelManager::GetInvCameraMatrix();
 
-	D3DXMATRIX scale_mat;
+	const D3DXMATRIX* inv_view_mat = ModelManager::GetInvCameraMatrix();
+	const D3DXMATRIX* view_mat = ModelManager::GetCameraMatrix();
+	const D3DXMATRIX* proj_mat = ModelManager::GetProjMatrix();
+	D3DXMATRIX t_proj_mat;
+	D3DXMatrixPerspectiveFovLH( &t_proj_mat, g_fov, g_aspect, g_zmin + 5.5f, g_zmax );
+	//D3DXMatrixPerspectiveFovLH()
+
+	//D3DXMATRIX scale_mat;
 	//D3DXMatrixScaling( &scale_mat, GetScaleH() * 0.5f, GetScaleV() * 0.5f, 1.f );
-	D3DXMatrixScaling( &scale_mat, g_screen_real_width * 0.005f, g_screen_real_height * 0.005f, 1.f );
+	//D3DXMatrixScaling( &scale_mat, g_screen_real_width * 50.f, g_screen_real_height * 50.f, 1.f );
 
-	D3DXMatrixMultiply( &m_matrix, &trans_mat, view_mat );
-	D3DXMatrixMultiply( &m_matrix, &scale_mat, &m_matrix );
+	//D3DXMatrixMultiply( &m_matrix, &trans_mat, view_mat );
+	//D3DXMatrixMultiply( &m_matrix, &scale_mat, &m_matrix );
+	D3DXVECTOR3 t_vec;
+	D3DXVec3TransformCoord( &t_vec, &(D3DXVECTOR3()), &t_proj_mat );
+
+	D3DXMatrixMultiply( &m_matrix, &t_proj_mat, inv_view_mat );
 }

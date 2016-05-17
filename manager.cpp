@@ -28,7 +28,7 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 	s_pCamera = t_cam;
 
 	m_vec_model.push_back( new LightPoint() );
-	m_vec_model.push_back( new Terrain() );
+	//m_vec_model.push_back( new Terrain() );
 	m_vec_model.push_back( new ModelWithMaterialTextureAlpha() );
 	m_vec_model.push_back( new UIBase() );
 
@@ -157,6 +157,18 @@ const D3DXMATRIX* ModelManager::GetInvCameraMatrix()
 	if( s_pCamera )
 	{
 		return s_pCamera->GetInvCamMatrix();
+	}
+	else
+	{
+		return NULL;
+	}
+}
+
+const D3DXMATRIX* ModelManager::GetProjMatrix()
+{
+	if( s_pCamera )
+	{
+		return s_pCamera->GetProjMatrix();
 	}
 	else
 	{

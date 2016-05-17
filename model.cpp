@@ -1,5 +1,6 @@
 #include "model.h"
 #include "mesh_factory.h"
+#include "manager.h"
 
 /************************************************************************/
 /*                                                                      */
@@ -78,7 +79,10 @@ void Model::Render( LPDIRECT3DDEVICE9 device )
  	device->SetStreamSource( 0, m_vb, 0, sizeof(ModelVertexStruct) );
 	device->SetFVF( ModelVertexStruct::FVF );
 	device->SetIndices( m_ib );
+	//const D3DXMATRIX* proj_mat = ModelManager::GetProjMatrix();
 	device->SetTransform( D3DTS_WORLD, &m_matrix );
+
+	//device->SetTransform( D3DTS_WORLD, &m_matrix );
 	device->DrawIndexedPrimitive( D3DPT_TRIANGLELIST, 0, 0, m_vertex_size, 0, m_index_size / 3 );
 	/*LPD3DXMESH pmesh = NULL;
 	D3DXCreateTeapot( device, &pmesh, NULL );

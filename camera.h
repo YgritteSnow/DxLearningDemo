@@ -23,6 +23,7 @@ public:
 
 	const D3DXMATRIX* GetCamMatrix(){return &m_viewMat;};
 	const D3DXMATRIX* GetInvCamMatrix(){return &m_invViewMat;};
+	const D3DXMATRIX* GetProjMatrix(){return &m_projMat;};
 
 protected:
 	D3DXMATRIX m_viewMat;
