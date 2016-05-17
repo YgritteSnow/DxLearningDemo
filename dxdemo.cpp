@@ -121,7 +121,7 @@ INT WINAPI WinMain( HINSTANCE hinst, HINSTANCE, LPSTR cmdline, INT nCmd )
 		L"classname", 
 		L"caption?...", 
 		WS_OVERLAPPEDWINDOW, 
-		800, 400, g_screen_width, g_screen_height, 
+		800, 400, g_screen_pixel_width, g_screen_pixel_height, 
 		NULL, NULL, hinst, 0
 		);
 
