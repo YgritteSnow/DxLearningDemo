@@ -30,13 +30,13 @@ void UIBase::PreRender( LPDIRECT3DDEVICE9 device )
 
 	UIVertex* verticies = NULL;
 	UIVertex v_arr[c_vertex_size];
-	v_arr[0] = UIVertex( -1.0f, -1.0f, 1.f, 0xffffffff, 0.f, 0.f );
-	v_arr[1] = UIVertex( 1.0f, 1.0f, 1.f, 0xffffffff, 1.f, 1.f );
-	v_arr[2] = UIVertex( -1.0f, 1.0f, 1.f, 0xffffffff, 0.f, 1.f );
+	v_arr[0] = UIVertex( -1.0f, -1.0f, 1.0000f, 0xffffffff, 0.f, 0.f );
+	v_arr[1] = UIVertex( 1.0f, 1.0f, 1.0000f, 0xffffffff, 1.f, 1.f );
+	v_arr[2] = UIVertex( -1.0f, 1.0f, 1.0000f, 0xffffffff, 0.f, 1.f );
 
-	v_arr[3] = UIVertex( -1.0f, -1.0f, 1.f, 0xffffffff, 0.f, 0.f );
-	v_arr[4] = UIVertex( 1.0f, -1.0f, 1.f, 0xffffffff, 1.f, 0.f );
-	v_arr[5] = UIVertex( 1.0f, 1.0f, 1.f, 0xffffffff, 1.f, 1.f );
+	v_arr[3] = UIVertex( -1.0f, -1.0f, 1.0000f, 0xffffffff, 0.f, 0.f );
+	v_arr[4] = UIVertex( 1.0f, -1.0f, 1.0000f, 0xffffffff, 1.f, 0.f );
+	v_arr[5] = UIVertex( 1.0f, 1.0f, 1.0000f, 0xffffffff, 1.f, 1.f );
 
 	m_vb->Lock( 0, 0, (void **) &verticies, 0 );
 	memcpy( verticies, v_arr, c_vertex_size * sizeof( UIVertex ) );
@@ -155,7 +155,6 @@ float UIBase::GetPosV()
 
 void UIBase::RecalMatrix()
 {
-	D3DXMATRIX trans_mat;
 	float t;
 	t = GetScaleH();
 	t = GetScaleV(); 
@@ -163,24 +162,26 @@ void UIBase::RecalMatrix()
 	t = GetPosOffsetV();
 	t = GetPosH();
 	t = GetPosV();
-	//D3DXMatrixTranslation( &trans_mat, GetPosH(), GetPosV(), g_zmin + 0.00001f );
-	D3DXMatrixTranslation( &trans_mat, g_screen_real_width * 0.5f, g_screen_real_height * 0.5f, 1.1f );
 
 	const D3DXMATRIX* inv_view_mat = ModelManager::GetInvCameraMatrix();
-	const D3DXMATRIX* view_mat = ModelManager::GetCameraMatrix();
-	const D3DXMATRIX* proj_mat = ModelManager::GetProjMatrix();
-	D3DXMATRIX t_proj_mat;
-	D3DXMatrixPerspectiveFovLH( &t_proj_mat, g_fov, g_aspect, g_zmin + 5.5f, g_zmax );
-	//D3DXMatrixPerspectiveFovLH()
+	
+	D3DXMATRIX trans_mat;
 
-	//D3DXMATRIX scale_mat;
-	//D3DXMatrixScaling( &scale_mat, GetScaleH() * 0.5f, GetScaleV() * 0.5f, 1.f );
-	//D3DXMatrixScaling( &scale_mat, g_screen_real_width * 50.f, g_screen_real_height * 50.f, 1.f );
+	//第一种，平移一丢丢
+	D3DXMatrixTranslation( &trans_mat, 0.f, 0.f, 0.1f );
+	
+	//第二种，自己做个投影矩阵。。。
+	//D3DXMatrixIdentity( &trans_mat );
+	//trans_mat._33 = 1.1f;
+	//trans_mat._34 = 1.f;
+	//trans_mat._43 = 0.0f;
+	//trans_mat._44 = 0.0f;
 
-	//D3DXMatrixMultiply( &m_matrix, &trans_mat, view_mat );
-	//D3DXMatrixMultiply( &m_matrix, &scale_mat, &m_matrix );
-	D3DXVECTOR3 t_vec;
-	D3DXVec3TransformCoord( &t_vec, &(D3DXVECTOR3()), &t_proj_mat );
+	//第三种，用函数做投影矩阵。。。
+	//D3DXMatrixOrthoLH( &trans_mat, g_screen_real_width * 0.9f, g_screen_real_height * 0.9f, g_zmin + 0.01f, g_zmax );
+	//D3DXMatrixInverse( &trans_mat, NULL, &trans_mat );
 
-	D3DXMatrixMultiply( &m_matrix, &t_proj_mat, inv_view_mat );
+	D3DXMatrixMultiply( &m_matrix, &trans_mat, inv_view_mat );
+
+
 }
