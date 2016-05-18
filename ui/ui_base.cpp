@@ -178,7 +178,7 @@ void UIBase::RecalMatrix()
 	//trans_mat._44 = 0.0f;
 
 	//第三种，用函数做投影矩阵。。。
-	//D3DXMatrixOrthoLH( &trans_mat, g_screen_real_width * 0.9f, g_screen_real_height * 0.9f, g_zmin + 0.01f, g_zmax );
+	//D3DXMatrixOrthoLH( &trans_mat, g_screen_real_width * 0.9f, g_screen_real_height * 0.9f, 1 + 0.01f, 1 );
 	//D3DXMatrixInverse( &trans_mat, NULL, &trans_mat );
 
 	D3DXMatrixMultiply( &m_matrix, &trans_mat, inv_view_mat );
