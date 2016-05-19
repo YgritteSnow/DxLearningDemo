@@ -1,5 +1,5 @@
-#ifndef __TEXTURE_DIAPLAY_BOARD_H__
-#define __TEXTURE_DIAPLAY_BOARD_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TEXTURE_EDITOR_TEXTURE_DISPLAY_BOARD_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TEXTURE_EDITOR_TEXTURE_DISPLAY_BOARD_H__
 
 #include "../ui/ui_base.h"
 
@@ -9,4 +9,5 @@ public:
 	void SetTexture( LPDIRECT3DTEXTURE9 pTexture ){};
 };
 
-#endif
+
+ #endif 

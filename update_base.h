@@ -1,5 +1,5 @@
-#ifndef __UPDATE_BASE_H__
-#define __UPDATE_BASE_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__UPDATE_BASE_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__UPDATE_BASE_H__
 
 #include <Windows.h>
 
@@ -9,4 +9,5 @@ public:
 	virtual void Update( DWORD timeDelta ) = 0;
 };
 
-#endif
+
+ #endif 

@@ -1,5 +1,5 @@
-#ifndef __CAMERA_SIMPLE_MOVE_H__
-#define __CAMERA_SIMPLE_MOVE_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CAMERA_SIMPLE_MOVE_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CAMERA_SIMPLE_MOVE_H__
 
 #include "camera.h"
 
@@ -25,4 +25,5 @@ private:
 };
 
 
-#endif 
+
+ #endif 

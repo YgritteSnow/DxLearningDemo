@@ -1,5 +1,5 @@
-#ifndef __MESH_FACTORY_H__
-#define __MESH_FACTORY_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MESH_FACTORY_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MESH_FACTORY_H__
 
 #include <math.h>
 #include <random>
@@ -141,4 +141,5 @@ void GenerateTerrainMeshByFunc( VertexStruct*& vbuffer, int& vcount, WORD*& ibuf
 	}
 }
 
-#endif
+
+ #endif 

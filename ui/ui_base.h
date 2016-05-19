@@ -1,4 +1,5 @@
-
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__UI_UI_BASE_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__UI_UI_BASE_H__
 #include <d3dx9.h>
 #include <d3dx9math.h>
 #pragma comment( lib, "d3dx9.lib" )
@@ -87,3 +88,4 @@ private:
 	D3DXVECTOR2 m_ui_pos;	// -1 ~ 1
 	D3DXVECTOR2 m_ui_size;	// -1 ~ 1
 };
+ #endif 

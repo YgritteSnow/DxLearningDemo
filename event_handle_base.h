@@ -1,5 +1,5 @@
-#ifndef __EVENT_HANDLE_BASE_H__
-#define __EVENT_HANDLE_BASE_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__EVENT_HANDLE_BASE_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__EVENT_HANDLE_BASE_H__
 
 #include "Windows.h"
 
@@ -43,4 +43,5 @@ private:
 	int m_cur_pos_y;
 };
 
-#endif
+
+ #endif 

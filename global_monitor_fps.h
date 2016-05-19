@@ -1,5 +1,5 @@
-#ifndef __GLOBAL_MONITOR_FPS_H__
-#define __GLOBAL_MONITOR_FPS_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GLOBAL_MONITOR_FPS_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GLOBAL_MONITOR_FPS_H__
 
 #include "global_monitor.h"
 #include <Windows.h>
@@ -19,4 +19,5 @@ private:
 	DWORD m_fps_count;
 
 };
-#endif
+
+ #endif 

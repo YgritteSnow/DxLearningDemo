@@ -1,5 +1,5 @@
-#ifndef __TEXT_H__
-#define __TEXT_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TEXTMESH_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TEXTMESH_H__
 
 #include <d3dx9.h>
 #pragma comment(lib, "d3dx9.lib")
@@ -21,4 +21,5 @@ public:
 private:
 	std::string m_str;
 };
-#endif
+
+ #endif 

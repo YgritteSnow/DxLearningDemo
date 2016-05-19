@@ -1,5 +1,5 @@
-#ifndef __MANAGER_H__
-#define __MANAGER_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MANAGER_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MANAGER_H__
 
 #include "model.h"
 #include "model_material.h"
@@ -58,4 +58,5 @@ private:
 	DWORD m_last_time;
 };
 
-#endif
+
+ #endif 

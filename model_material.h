@@ -1,5 +1,5 @@
-#ifndef __MODEL_MATERIAL_H__
-#define __MODEL_MATERIAL_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MATERIAL_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MATERIAL_H__
 
 #include "model.h"
 
@@ -15,4 +15,5 @@ public:
 private:
 	D3DMATERIAL9 m_mtl;
 };
-#endif
+
+ #endif 

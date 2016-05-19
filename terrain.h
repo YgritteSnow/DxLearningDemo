@@ -1,5 +1,5 @@
-#ifndef __TERRAIN_H__
-#define __TERRAIN_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TERRAIN_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TERRAIN_H__
 
 #include "model.h"
 
@@ -12,4 +12,5 @@ private:
 	float m_range_x;
 	float m_range_y;
 };
-#endif
+
+ #endif 

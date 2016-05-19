@@ -1,5 +1,5 @@
-#ifndef __MODEL_MATERIAL_TEXTURE_H__
-#define __MODEL_MATERIAL_TEXTURE_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MATERIAL_TEXTURE_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MATERIAL_TEXTURE_H__
 
 #include <d3dx9.h>
 #pragma comment(lib, "d3dx9.lib")
@@ -36,4 +36,5 @@ public:
 private:
 	LPDIRECT3DTEXTURE9 m_ptex;
 };
-#endif
+
+ #endif 

@@ -1,5 +1,5 @@
-#ifndef __GLOBAL_DEBUG_BOARD_H__
-#define __GLOBAL_DEBUG_BOARD_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GLOBAL_DEBUG_BOARD_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GLOBAL_DEBUG_BOARD_H__
 
 #include "textfont.h"
 #include <map>
@@ -16,4 +16,5 @@ public:
 	}
 };
 
-#endif
+
+ #endif 

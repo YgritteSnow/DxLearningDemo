@@ -1,5 +1,5 @@
-#ifndef __TEXT_FONT_H__
-#define __TEXT_FONT_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TEXTFONT_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TEXTFONT_H__
 
 #include <d3dx9.h>
 #pragma comment(lib, "d3dx9.lib")
@@ -26,4 +26,5 @@ private:
 	std::string m_str;
 	LPD3DXFONT m_font;
 };
-#endif
+
+ #endif 

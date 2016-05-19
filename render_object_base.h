@@ -1,5 +1,5 @@
-#ifndef __RENDER_OBJECT_BASE_H__
-#define __RENDER_OBJECT_BASE_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_OBJECT_BASE_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_OBJECT_BASE_H__
 
 #include <d3dx9.h>
 #pragma comment( lib, "d3dx9.lib" )
@@ -16,4 +16,5 @@ public:
 	virtual void Render( LPDIRECT3DDEVICE9 device ) = 0;
 };
 
-#endif
+
+ #endif 

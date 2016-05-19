@@ -1,5 +1,5 @@
-#ifndef __MODEL_H__
-#define __MODEL_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_H__
 
 #include <d3dx9.h>
 #include <d3dx9math.h>
@@ -53,4 +53,5 @@ protected:
 	D3DXMATRIX m_matrix;
 };
 
-#endif
+
+ #endif 

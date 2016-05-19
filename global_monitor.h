@@ -1,5 +1,5 @@
-#ifndef __GLOBAL_MONITOR_H__
-#define __GLOBAL_MONITOR_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GLOBAL_MONITOR_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GLOBAL_MONITOR_H__
 
 #include <vector>
 #include <string>
@@ -44,4 +44,5 @@ private:
 	GlobalMonitorBoardInterface* m_pDisplayboard;
 	std::vector< GlobalMonitorBase* > m_vec_monitors;
 };
-#endif
+
+ #endif 
