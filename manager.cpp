@@ -5,6 +5,8 @@
 #include "debug_monitor/global_monitor.h"
 #include "debug_monitor/global_debug_board.h"
 
+#include "texture_editor/texture_editor.h"
+
 #include "ui/ui_base.h"
 
 GlobalMonitorManager g_global_monitor = GlobalMonitorManager();
@@ -30,10 +32,16 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 	m_vec_model.push_back( new LightPoint() );
 	//m_vec_model.push_back( new Terrain() );
 	m_vec_model.push_back( new ModelWithMaterialTextureAlpha() );
-	m_vec_model.push_back( new UIBase() );
+	//m_vec_model.push_back( new UIBase() );
 
 	GlobalDebugBoard* t_global_board = new GlobalDebugBoard();
 	m_vec_model.push_back( t_global_board );
+
+	TextureEditor* t_textureEditor = new TextureEditor();
+	TextureDiaplayBoard* t_texturePlayBoard = new TextureDiaplayBoard();
+	t_textureEditor->SetPlayBoard( t_texturePlayBoard );
+	m_vec_model.push_back( t_textureEditor );
+	m_vec_model.push_back( t_texturePlayBoard );
 
 	m_vec_eventhandle.clear();
 	m_vec_eventhandle.push_back( t_cam );

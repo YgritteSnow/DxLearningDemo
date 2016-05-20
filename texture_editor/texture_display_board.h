@@ -6,7 +6,10 @@
 class TextureDiaplayBoard : public UIBase
 {
 public:
-	void SetTexture( LPDIRECT3DTEXTURE9 pTexture ){};
+	virtual void SetTexture( LPDIRECT3DTEXTURE9 pTexture )
+	{
+		UIBase::SetTexture( pTexture );
+	}
 };
 
 

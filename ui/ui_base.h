@@ -45,6 +45,8 @@ public:
 	virtual void SetPos( float h_pos, float v_pos );
 	virtual void SetSize( float h_size, float v_size );
 
+	virtual void SetTexture( LPDIRECT3DTEXTURE9 p_tex );
+
 protected:
 	void RecalMatrix();
 

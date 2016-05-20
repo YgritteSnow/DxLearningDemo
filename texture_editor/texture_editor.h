@@ -9,23 +9,35 @@
 #pragma comment( lib, "d3dx9.lib" )
 
 #include "texture_editor/texture_display_board.h"
+#include "render_object_base.h"
 
-class TextureEditor
+class TextureEditor : public RenderObjectBase
 {
 public:
+	TextureEditor():m_textureDisplayer(NULL), m_cur_pTexture(NULL){}
+
+	void SetPlayBoard( TextureDiaplayBoard* pPlayBoard );
+
 	void SetCurTexture( LPDIRECT3DTEXTURE9 pTexture );
-	void SetCurTextureByPath( LPCTSTR filepath, LPDIRECT3DDEVICE9 device )
+	void SetCurTextureByPath( LPCWSTR filepath, LPDIRECT3DDEVICE9 device )
 	{
 		if( FAILED( D3DXCreateTextureFromFile(
 			device, filepath, &m_cur_pTexture ) ) )
 			exit(0);
 	}
 	void GetTexture();
+	void SaveTexture( const char* filepath );
 
 	void RefreshDiaplay();
+	
+	virtual void Config(){};
+	virtual void PreRender( LPDIRECT3DDEVICE9 device );
+	virtual void Render( LPDIRECT3DDEVICE9 device );
+
+	void Edit();
 
 private:
-	TextureDiaplayBoard m_textureDisplayer;
+	TextureDiaplayBoard* m_textureDisplayer;
 
 	LPDIRECT3DTEXTURE9 m_cur_pTexture;
 };

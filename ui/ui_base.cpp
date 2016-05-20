@@ -8,14 +8,17 @@ DWORD UIBase::UIVertex::FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1;
 void UIBase::Config()
 {
 	SetSize(0.5f, 0.5f);
-	SetPos(0.5f, 0.5f);
+	SetPos(0.f, 0.f);
 }
 
 void UIBase::PreRender( LPDIRECT3DDEVICE9 device )
 {
-	if( FAILED( D3DXCreateTextureFromFile(
-		device, L"tex_alpha.png", &m_tex ) ) )
-		exit(0);
+	if( !m_tex )
+	{
+		if( FAILED( D3DXCreateTextureFromFile(
+			device, L"tex_alpha.png", &m_tex ) ) )
+			exit(0);
+	}
 
 	// ¶¥µã»º´æ
 	if( FAILED( device->CreateVertexBuffer(
@@ -187,11 +190,20 @@ void UIBase::RecalMatrix()
 	D3DXMatrixIdentity( &trans_mat );
 	trans_mat._11 = GetScaleH();
 	trans_mat._22 = GetScaleV();
+	trans_mat._33 = 1.1f;
 	trans_mat._41 = GetPosH();
 	trans_mat._42 = GetPosV();
 	
 
 	D3DXMatrixMultiply( &m_matrix, &trans_mat, inv_view_mat );
+}
 
-
+void UIBase::SetTexture( LPDIRECT3DTEXTURE9 p_tex )
+{
+	if( m_tex && m_tex != p_tex )
+	{
+		m_tex->Release();
+		m_tex = NULL;
+	}
+	m_tex = p_tex;
 }
