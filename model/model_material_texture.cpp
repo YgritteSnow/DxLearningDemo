@@ -1,4 +1,4 @@
-#include "model_material_texture.h"
+#include "model/model_material_texture.h"
 
 #define TEX_FILE_PATH L"tex_alpha.png"
 

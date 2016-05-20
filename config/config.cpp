@@ -1,4 +1,4 @@
-#include "config.h"
+#include "config/config.h"
 #include <math.h>
 
 int g_screen_pixel_width = 800;

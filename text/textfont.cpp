@@ -1,4 +1,4 @@
-#include "textfont.h"
+#include "text/textfont.h"
 
 FontText::FontText()
 	: m_font(NULL)

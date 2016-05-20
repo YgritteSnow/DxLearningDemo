@@ -1,5 +1,5 @@
-#include "camera.h"
-#include "config.h"
+#include "camera/camera.h"
+#include "config/config.h"
 
 /************************************************************************/
 /*                                                                      */

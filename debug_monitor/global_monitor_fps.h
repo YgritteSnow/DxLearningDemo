@@ -1,7 +1,7 @@
 #ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GLOBAL_MONITOR_FPS_H__
 #define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GLOBAL_MONITOR_FPS_H__
 
-#include "global_monitor.h"
+#include "debug_monitor/global_monitor.h"
 #include <Windows.h>
 
 class GlobalMonitor_fps : public GlobalMonitorBase

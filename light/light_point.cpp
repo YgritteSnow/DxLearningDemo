@@ -1,4 +1,4 @@
-#include "light_point.h"
+#include "light/light_point.h"
 
 void LightPoint::Config()
 {

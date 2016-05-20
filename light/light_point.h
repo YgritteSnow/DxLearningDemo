@@ -4,9 +4,9 @@
 #include <d3dx9.h>
 #pragma comment(lib, "d3dx9.lib")
 
-#include "light.h"
+#include "light/light.h"
 #include <Windows.h>
-#include "model_material.h"
+#include "model/model_material.h"
 
 class LightPoint : public Light
 {

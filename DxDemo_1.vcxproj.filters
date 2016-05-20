@@ -34,7 +34,7 @@
     <Filter Include="源文件\config">
       <UniqueIdentifier>{3e2a868b-998c-4943-85ea-04dc52c473c2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\debug">
+    <Filter Include="源文件\debug_monitor">
       <UniqueIdentifier>{9d72f4a4-4a1a-4b39-8830-4b267412d765}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -57,50 +57,50 @@
     <ClCompile Include="ui\ui_base.cpp">
       <Filter>源文件\ui</Filter>
     </ClCompile>
-    <ClCompile Include="model.cpp">
+    <ClCompile Include="model\model.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="model_material.cpp">
+    <ClCompile Include="model\model_material.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="model_material_texture.cpp">
+    <ClCompile Include="model\model_material_texture.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="model_material_texture_alpha.cpp">
+    <ClCompile Include="model\model_material_texture_alpha.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="terrain.cpp">
+    <ClCompile Include="model\terrain.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="textfont.cpp">
-      <Filter>源文件\text</Filter>
-    </ClCompile>
-    <ClCompile Include="textmesh.cpp">
-      <Filter>源文件\text</Filter>
-    </ClCompile>
-    <ClCompile Include="light.cpp">
+    <ClCompile Include="light\light.cpp">
       <Filter>源文件\light</Filter>
     </ClCompile>
-    <ClCompile Include="light_point.cpp">
+    <ClCompile Include="light\light_point.cpp">
       <Filter>源文件\light</Filter>
     </ClCompile>
-    <ClCompile Include="camera.cpp">
-      <Filter>源文件\camera</Filter>
+    <ClCompile Include="debug_monitor\global_debug_board.cpp">
+      <Filter>源文件\debug_monitor</Filter>
     </ClCompile>
-    <ClCompile Include="camera_simple_move.cpp">
-      <Filter>源文件\camera</Filter>
+    <ClCompile Include="debug_monitor\global_monitor.cpp">
+      <Filter>源文件\debug_monitor</Filter>
     </ClCompile>
-    <ClCompile Include="config.cpp">
+    <ClCompile Include="debug_monitor\global_monitor_fps.cpp">
+      <Filter>源文件\debug_monitor</Filter>
+    </ClCompile>
+    <ClCompile Include="config\config.cpp">
       <Filter>源文件\config</Filter>
     </ClCompile>
-    <ClCompile Include="global_debug_board.cpp">
-      <Filter>源文件\debug</Filter>
+    <ClCompile Include="camera\camera.cpp">
+      <Filter>源文件\camera</Filter>
     </ClCompile>
-    <ClCompile Include="global_monitor.cpp">
-      <Filter>源文件\debug</Filter>
+    <ClCompile Include="camera\camera_simple_move.cpp">
+      <Filter>源文件\camera</Filter>
     </ClCompile>
-    <ClCompile Include="global_monitor_fps.cpp">
-      <Filter>源文件\debug</Filter>
+    <ClCompile Include="text\textfont.cpp">
+      <Filter>源文件\text</Filter>
+    </ClCompile>
+    <ClCompile Include="text\textmesh.cpp">
+      <Filter>源文件\text</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,53 +122,53 @@
     <ClInclude Include="update_base.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="model_material_texture_alpha.h">
+    <ClInclude Include="model\mesh_factory.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="model.h">
+    <ClInclude Include="model\model.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="model_material.h">
+    <ClInclude Include="model\model_material.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="model_material_texture.h">
+    <ClInclude Include="model\model_material_texture.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="terrain.h">
+    <ClInclude Include="model\model_material_texture_alpha.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="textmesh.h">
-      <Filter>源文件\text</Filter>
+    <ClInclude Include="model\terrain.h">
+      <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="textfont.h">
-      <Filter>源文件\text</Filter>
-    </ClInclude>
-    <ClInclude Include="light_point.h">
+    <ClInclude Include="light\light.h">
       <Filter>源文件\light</Filter>
     </ClInclude>
-    <ClInclude Include="light.h">
+    <ClInclude Include="light\light_point.h">
       <Filter>源文件\light</Filter>
     </ClInclude>
-    <ClInclude Include="camera_simple_move.h">
-      <Filter>源文件\camera</Filter>
+    <ClInclude Include="debug_monitor\global_debug_board.h">
+      <Filter>源文件\debug_monitor</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>源文件\camera</Filter>
+    <ClInclude Include="debug_monitor\global_monitor.h">
+      <Filter>源文件\debug_monitor</Filter>
     </ClInclude>
-    <ClInclude Include="config.h">
+    <ClInclude Include="debug_monitor\global_monitor_fps.h">
+      <Filter>源文件\debug_monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="config\config.h">
       <Filter>源文件\config</Filter>
     </ClInclude>
-    <ClInclude Include="global_monitor_fps.h">
-      <Filter>源文件\debug</Filter>
+    <ClInclude Include="camera\camera.h">
+      <Filter>源文件\camera</Filter>
     </ClInclude>
-    <ClInclude Include="global_debug_board.h">
-      <Filter>源文件\debug</Filter>
+    <ClInclude Include="camera\camera_simple_move.h">
+      <Filter>源文件\camera</Filter>
     </ClInclude>
-    <ClInclude Include="global_monitor.h">
-      <Filter>源文件\debug</Filter>
+    <ClInclude Include="text\textfont.h">
+      <Filter>源文件\text</Filter>
     </ClInclude>
-    <ClInclude Include="mesh_factory.h">
-      <Filter>源文件\model</Filter>
+    <ClInclude Include="text\textmesh.h">
+      <Filter>源文件\text</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

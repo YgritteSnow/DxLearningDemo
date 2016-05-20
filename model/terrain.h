@@ -1,7 +1,7 @@
 #ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TERRAIN_H__
 #define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TERRAIN_H__
 
-#include "model.h"
+#include "model/model.h"
 
 class Terrain : public Model
 {

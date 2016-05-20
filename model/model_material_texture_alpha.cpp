@@ -1,4 +1,4 @@
-#include "model_material_texture_alpha.h"
+#include "model/model_material_texture_alpha.h"
 
 void ModelWithMaterialTextureAlpha::Render( LPDIRECT3DDEVICE9 device )
 {

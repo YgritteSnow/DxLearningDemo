@@ -1,4 +1,4 @@
-#include "textmesh.h"
+#include "text/textmesh.h"
 
 MeshText::MeshText()
 {

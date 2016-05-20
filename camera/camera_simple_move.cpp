@@ -1,4 +1,4 @@
-#include "camera_simple_move.h"
+#include "camera/camera_simple_move.h"
 
 void CameraSimpleMove::Config()
 {

@@ -2,11 +2,11 @@
 #pragma comment( lib, "d3d9.lib" )
 
 #include "manager.h"
-#include "config.h"
+#include "config/config.h"
 
 //#include <tchar.h>
 
-#include "model.h"
+#include "model/model.h"
 
 LPDIRECT3D9 g_d3d = NULL;
 LPDIRECT3DDEVICE9 g_d3ddevice = NULL;

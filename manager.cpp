@@ -2,8 +2,8 @@
 #include <Windows.h>
 #pragma comment(lib, "winmm.lib")
 
-#include "global_monitor.h"
-#include "global_debug_board.h"
+#include "debug_monitor/global_monitor.h"
+#include "debug_monitor/global_debug_board.h"
 
 #include "ui/ui_base.h"
 

@@ -1,5 +1,5 @@
-#include "global_monitor.h"
-#include "global_monitor_fps.h"
+#include "debug_monitor/global_monitor.h"
+#include "debug_monitor/global_monitor_fps.h"
 
 /************************************************************************/
 /*                                                                      */

@@ -1,4 +1,4 @@
-#include "global_monitor_fps.h"
+#include "debug_monitor/global_monitor_fps.h"
 #include <time.h>
 
 void GlobalMonitor_fps::Update( DWORD timeDelta )

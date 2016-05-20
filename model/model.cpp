@@ -1,5 +1,5 @@
-#include "model.h"
-#include "mesh_factory.h"
+#include "model/model.h"
+#include "model/mesh_factory.h"
 #include "manager.h"
 
 /************************************************************************/

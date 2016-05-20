@@ -1,5 +1,5 @@
-#include "terrain.h"
-#include "mesh_factory.h"
+#include "model/terrain.h"
+#include "model/mesh_factory.h"
 
 float terrainFunc( float x, float z ) // ¶þÔªº¯Êý
 {

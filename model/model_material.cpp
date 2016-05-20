@@ -1,4 +1,4 @@
-#include "model_material.h"
+#include "model/model_material.h"
 
 ModelWithMaterial::~ModelWithMaterial()
 {

@@ -1,20 +1,20 @@
 #ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MANAGER_H__
 #define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MANAGER_H__
 
-#include "model.h"
-#include "model_material.h"
-#include "model_material_texture.h"
-#include "model_material_texture_alpha.h"
+#include "model/model.h"
+#include "model/model_material.h"
+#include "model/model_material_texture.h"
+#include "model/model_material_texture_alpha.h"
 
-#include "camera.h"
-#include "camera_simple_move.h"
+#include "camera/camera.h"
+#include "camera/camera_simple_move.h"
 
-#include "light.h"
-#include "light_point.h"
+#include "light/light.h"
+#include "light/light_point.h"
 
-#include "terrain.h"
+#include "model/terrain.h"
 
-#include "textfont.h"
+#include "text/textfont.h"
 
 #include "update_base.h"
 
