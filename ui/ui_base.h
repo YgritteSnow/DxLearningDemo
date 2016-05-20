@@ -4,7 +4,7 @@
 #include <d3dx9math.h>
 #pragma comment( lib, "d3dx9.lib" )
 
-#include "../render_object_base.h"
+#include "render_object_base.h"
 
 enum PosMode
 {

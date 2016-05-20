@@ -1,4 +1,4 @@
-#include "texture_editor.h"
+#include "texture_editor/texture_editor.h"
 
 void TextureEditor::RefreshDiaplay()
 {

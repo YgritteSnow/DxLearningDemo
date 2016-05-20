@@ -8,7 +8,7 @@
 #include <d3dx9.h>
 #pragma comment( lib, "d3dx9.lib" )
 
-#include "texture_display_board.h"
+#include "texture_editor/texture_display_board.h"
 
 class TextureEditor
 {

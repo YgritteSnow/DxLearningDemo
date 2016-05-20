@@ -1,6 +1,6 @@
-#include "ui_base.h"
-#include "../manager.h"
-#include "../config.h"
+#include "ui/ui_base.h"
+#include "manager.h"
+#include "config.h"
 extern float g_zmin;
 
 DWORD UIBase::UIVertex::FVF = D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1;
