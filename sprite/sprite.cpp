@@ -11,6 +11,7 @@ void Sprite::Config()
 {
 	AddSprite( 0.f, 5.f, 0.f, 0xffff0000 );
 }
+
 void Sprite::PreRender( LPDIRECT3DDEVICE9 device )
 {
 

@@ -12,6 +12,9 @@ struct SpriteVertex
 {
 	SpriteVertex( float x, float y, float z, D3DCOLOR c )
 		:_x(x), _y(y), _z(z), _color(c){}
+	SpriteVertex()
+		:_x(0.f), _y(0.f), _z(0.f), _color(0){}
+
 	float _x, _y, _z;
 	D3DCOLOR _color;
 	static DWORD FVF;
@@ -30,7 +33,7 @@ public:
 	virtual void AddSprite( float x, float y, float z, D3DCOLOR c );
 
 protected:
-	std::vector< SpriteVertex > m_vec_sprite;
+	std::vector< ModelVertexStruct > m_vec_sprite;
 	std::vector< bool > m_vec_sprite_deadmark;
 	size_t m_sprite_capacity;
 	size_t m_sprite_arraysize;

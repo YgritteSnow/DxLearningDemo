@@ -179,5 +179,8 @@
     <ClInclude Include="sprite\sprite.h">
       <Filter>源文件\sprite</Filter>
     </ClInclude>
+    <ClInclude Include="tool_funcs.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
