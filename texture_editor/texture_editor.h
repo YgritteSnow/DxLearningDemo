@@ -42,5 +42,4 @@ private:
 	LPDIRECT3DTEXTURE9 m_cur_pTexture;
 };
 
-
- #endif 
+#endif 

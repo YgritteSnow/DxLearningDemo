@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__LIGHT_POINT_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__LIGHT_POINT_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__LIGHT_LIGHT_POINT_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__LIGHT_LIGHT_POINT_H__
 
 #include <d3dx9.h>
 #pragma comment(lib, "d3dx9.lib")
@@ -23,4 +23,4 @@ private:
 	ModelWithMaterial m_sunmodel;
 };
 
- #endif 
+#endif 

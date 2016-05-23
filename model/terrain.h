@@ -1,9 +1,9 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TERRAIN_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TERRAIN_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_TERRAIN_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_TERRAIN_H__
 
 #include "model/model.h"
 
-class Terrain : public Model
+class Terrain : public Model< ModelVertex >
 {
 public:
 	void Config();
@@ -13,4 +13,4 @@ private:
 	float m_range_y;
 };
 
- #endif 
+#endif 

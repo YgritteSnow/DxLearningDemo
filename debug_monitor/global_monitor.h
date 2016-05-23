@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GLOBAL_MONITOR_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GLOBAL_MONITOR_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__DEBUG_MONITOR_GLOBAL_MONITOR_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__DEBUG_MONITOR_GLOBAL_MONITOR_H__
 
 #include <vector>
 #include <string>
@@ -45,4 +45,4 @@ private:
 	std::vector< GlobalMonitorBase* > m_vec_monitors;
 };
 
- #endif 
+#endif 

@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__LIGHT_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__LIGHT_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__LIGHT_LIGHT_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__LIGHT_LIGHT_H__
 
 #include <d3dx9.h>
 #pragma comment(lib, "d3dx9.lib")
@@ -19,5 +19,4 @@ protected:
 	D3DLIGHT9 m_light;
 };
 
-
- #endif 
+#endif 

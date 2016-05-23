@@ -9,5 +9,4 @@ public:
 	virtual void Update( DWORD timeDelta ) = 0;
 };
 
-
- #endif 
+#endif 

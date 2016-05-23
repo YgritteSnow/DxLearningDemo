@@ -1,9 +1,9 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MATERIAL_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MATERIAL_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MODEL_MATERIAL_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MODEL_MATERIAL_H__
 
 #include "model/model.h"
 
-class ModelWithMaterial : public Model 
+class ModelWithMaterial : public Model< ModelVertex >
 {
 public:
 	ModelWithMaterial(){};
@@ -16,4 +16,4 @@ private:
 	D3DMATERIAL9 m_mtl;
 };
 
- #endif 
+#endif 

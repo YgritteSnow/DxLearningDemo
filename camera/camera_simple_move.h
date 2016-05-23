@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CAMERA_SIMPLE_MOVE_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CAMERA_SIMPLE_MOVE_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CAMERA_CAMERA_SIMPLE_MOVE_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CAMERA_CAMERA_SIMPLE_MOVE_H__
 
 #include "camera/camera.h"
 
@@ -24,6 +24,4 @@ private:
 	D3DXMATRIX m_rotMat;
 };
 
-
-
- #endif 
+#endif 

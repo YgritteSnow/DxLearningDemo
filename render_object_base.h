@@ -16,5 +16,4 @@ public:
 	virtual void Render( LPDIRECT3DDEVICE9 device ) = 0;
 };
 
-
- #endif 
+#endif 

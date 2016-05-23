@@ -58,5 +58,4 @@ private:
 	DWORD m_last_time;
 };
 
-
- #endif 
+#endif 

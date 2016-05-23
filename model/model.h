@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MODEL_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MODEL_H__
 
 #include <d3dx9.h>
 #include <d3dx9math.h>
@@ -29,9 +29,12 @@ struct ModelVertex// : public PosVertex
 	static DWORD FVF;
 };
 
+template <typename _Vertex>
 class Model : public RenderObjectBase
 {
 public:
+	typedef _Vertex ModelVertexStruct;
+
 	Model():m_vb(NULL), m_ib(NULL), m_vertex_arr(NULL), m_index_arr(NULL){};
 	virtual ~Model();
 	virtual void PreRender( LPDIRECT3DDEVICE9 device );
@@ -42,7 +45,6 @@ protected:
 
 	LPDIRECT3DVERTEXBUFFER9 m_vb;
 	LPDIRECT3DINDEXBUFFER9 m_ib;
-	typedef ModelVertex ModelVertexStruct;
 
 	int m_vertex_size;
 	ModelVertexStruct* m_vertex_arr;
@@ -53,5 +55,4 @@ protected:
 	D3DXMATRIX m_matrix;
 };
 
-
- #endif 
+#endif 

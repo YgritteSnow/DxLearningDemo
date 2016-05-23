@@ -7,7 +7,7 @@
 void TextureEditor::PreRender( LPDIRECT3DDEVICE9 device )
 {
 	SetCurTextureByPath( L"tex2.png", device );
-	EditFun_rand_color();
+	Edit();
 	RefreshDiaplay();
 }
 
@@ -29,6 +29,11 @@ void TextureEditor::RefreshDiaplay()
 	}
 
 	m_textureDisplayer->SetTexture( m_cur_pTexture );
+}
+
+inline DWORD PixelFun_sin_color( BYTE* pBits, int x, int y, int max_x, int max_y )
+{
+	return 0xff00ffff;
 }
 
 void TextureEditor::Edit()
@@ -62,7 +67,3 @@ void TextureEditor::Edit()
 	m_cur_pTexture->UnlockRect(0);
 }
 
-inline DWORD PixelFun_sin_color( BYTE* pBits, int x, int y, int max_x, int max_y )
-{
-	return 0xff00ffff;
-}

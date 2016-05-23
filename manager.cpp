@@ -4,9 +4,8 @@
 
 #include "debug_monitor/global_monitor.h"
 #include "debug_monitor/global_debug_board.h"
-
 #include "texture_editor/texture_editor.h"
-
+#include "sprite/sprite.h"
 #include "ui/ui_base.h"
 
 GlobalMonitorManager g_global_monitor = GlobalMonitorManager();
@@ -23,6 +22,7 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 {
 	m_device = device;
 	
+	// 这部分是时刻渲染的
 	m_vec_model.clear();
 	CameraSimpleMove* t_cam = new CameraSimpleMove();
 	m_vec_model.push_back( t_cam );
@@ -30,9 +30,12 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 	s_pCamera = t_cam;
 
 	m_vec_model.push_back( new LightPoint() );
-	//m_vec_model.push_back( new Terrain() );
+	m_vec_model.push_back( new Terrain() );
 	m_vec_model.push_back( new ModelWithMaterialTextureAlpha() );
 	//m_vec_model.push_back( new UIBase() );
+
+	Sprite* t_sprite = new Sprite();
+	m_vec_model.push_back( t_sprite );
 
 	GlobalDebugBoard* t_global_board = new GlobalDebugBoard();
 	m_vec_model.push_back( t_global_board );
@@ -43,9 +46,11 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 	m_vec_model.push_back( t_textureEditor );
 	m_vec_model.push_back( t_texturePlayBoard );
 
+	// 这部分是处理消息的
 	m_vec_eventhandle.clear();
 	m_vec_eventhandle.push_back( t_cam );
 
+	// 这部分是随时间更新的
 	g_global_monitor.SetDisplayBoard( t_global_board );
 	m_vec_updater.clear();
 	m_vec_updater.push_back( &g_global_monitor );

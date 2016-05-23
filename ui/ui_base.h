@@ -90,4 +90,5 @@ private:
 	D3DXVECTOR2 m_ui_pos;	// -1 ~ 1
 	D3DXVECTOR2 m_ui_size;	// -1 ~ 1
 };
- #endif 
+
+#endif 

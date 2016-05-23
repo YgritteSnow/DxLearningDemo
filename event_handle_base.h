@@ -43,5 +43,4 @@ private:
 	int m_cur_pos_y;
 };
 
-
- #endif 
+#endif 

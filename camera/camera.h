@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CAMERA_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CAMERA_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CAMERA_CAMERA_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CAMERA_CAMERA_H__
 
 #include <d3dx9math.h>
 #include <d3d9.h>
@@ -31,5 +31,4 @@ protected:
 	D3DXMATRIX m_projMat;
 };
 
-
- #endif 
+#endif 

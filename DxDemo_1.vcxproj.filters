@@ -37,6 +37,9 @@
     <Filter Include="源文件\debug_monitor">
       <UniqueIdentifier>{9d72f4a4-4a1a-4b39-8830-4b267412d765}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\sprite">
+      <UniqueIdentifier>{0d8add87-8b51-4355-8daa-a89bf495e50a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dxdemo.cpp">
@@ -101,6 +104,9 @@
     </ClCompile>
     <ClCompile Include="text\textmesh.cpp">
       <Filter>源文件\text</Filter>
+    </ClCompile>
+    <ClCompile Include="sprite\sprite.cpp">
+      <Filter>源文件\sprite</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="text\textmesh.h">
       <Filter>源文件\text</Filter>
+    </ClInclude>
+    <ClInclude Include="sprite\sprite.h">
+      <Filter>源文件\sprite</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
