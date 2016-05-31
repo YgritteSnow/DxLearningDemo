@@ -108,6 +108,9 @@
     <ClCompile Include="sprite\sprite.cpp">
       <Filter>源文件\sprite</Filter>
     </ClCompile>
+    <ClCompile Include="sprite\sprite_ball.cpp">
+      <Filter>源文件\sprite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="manager.h">
@@ -181,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="tool_funcs.h">
       <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sprite\sprite_ball.h">
+      <Filter>源文件\sprite</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

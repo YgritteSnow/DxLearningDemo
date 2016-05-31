@@ -3,7 +3,7 @@
 
 #include "model/model.h"
 
-class ModelWithMaterial : public Model< ModelVertex >
+class ModelWithMaterial : public Model
 {
 public:
 	ModelWithMaterial(){};
@@ -12,7 +12,7 @@ public:
 	virtual void Config();
 	virtual void Render( LPDIRECT3DDEVICE9 device );
 
-private:
+protected:
 	D3DMATERIAL9 m_mtl;
 };
 

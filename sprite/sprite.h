@@ -5,7 +5,7 @@
 #include <d3dx9.h>
 #pragma comment(lib, "d3dx9.lib")
 
-#include "model/model.h"
+#include "model/model_material_texture.h"
 #include "update_base.h"
 
 struct SpriteVertex
@@ -17,24 +17,42 @@ struct SpriteVertex
 
 	float _x, _y, _z;
 	D3DCOLOR _color;
+	//float _size;
 	static DWORD FVF;
 };
 
-class Sprite : public Model< SpriteVertex >
+class ParticleSprite : public SpriteVertex
+{
+public:
+	ParticleSprite( float x, float y, float z, D3DCOLOR c )
+		: SpriteVertex( x, y, z, c )
+		, _isDead(true){};
+
+	bool isDead(){ return _isDead; }
+	bool SetIsDead( bool isDead ){ _isDead = isDead; }
+	virtual bool Update( DWORD timeDelta ){ return false; };
+protected:
+	bool _isDead;
+};
+
+class Sprite : public ModelWithMaterialTexture, public UpdateBase
 {
 public:
 	Sprite():m_sprite_capacity(0), m_sprite_arraysize(0){};
-	virtual ~Sprite();
+	virtual ~Sprite(){};
 
-	virtual void Config();
+	typedef SpriteVertex ModelVertexStruct;
+
+	virtual void Config() = 0;
 	virtual void PreRender( LPDIRECT3DDEVICE9 device );
 	virtual void Render( LPDIRECT3DDEVICE9 device );
+	virtual void Update( DWORD timeDelta );
 	
-	virtual void AddSprite( float x, float y, float z, D3DCOLOR c );
+	virtual void OnResetSprites( DWORD timeDelta ) = 0;
 
 protected:
-	std::vector< ModelVertexStruct > m_vec_sprite;
-	std::vector< bool > m_vec_sprite_deadmark;
+	std::vector< ParticleSprite* > m_vec_sprite;
+
 	size_t m_sprite_capacity;
 	size_t m_sprite_arraysize;
 };

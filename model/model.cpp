@@ -7,8 +7,7 @@
 /************************************************************************/
 DWORD ModelVertex::FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_DIFFUSE | D3DFVF_TEX1;
 
-template < typename T >
-Model<T>::~Model()
+Model::~Model()
 {
 	if( m_vb )
 	{
@@ -26,16 +25,14 @@ Model<T>::~Model()
 		delete[] m_vertex_arr;
 }
 
-template < typename T >
-void Model<T>::Config()
+void Model::Config()
 {
 	GenerateBallMesh<ModelVertexStruct>( m_vertex_arr, m_vertex_size, m_index_arr, m_index_size, 1.f );
 
 	D3DXMatrixTranslation( &m_matrix, 0, 0, 0 );
 }
 
-template < typename T >
-void Model<T>::PreRender( LPDIRECT3DDEVICE9 device )
+void Model::PreRender( LPDIRECT3DDEVICE9 device )
 {
 	// ¶¥µã»º´æ
 	if( FAILED( device->CreateVertexBuffer(
@@ -72,8 +69,7 @@ void Model<T>::PreRender( LPDIRECT3DDEVICE9 device )
 	return;
 }
 
-template < typename T >
-void Model<T>::Render( LPDIRECT3DDEVICE9 device )
+void Model::Render( LPDIRECT3DDEVICE9 device )
 {
 	// Ìî³ä
 	device->SetRenderState( D3DRS_FILLMODE, D3DFILL_SOLID);

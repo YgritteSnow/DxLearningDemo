@@ -5,7 +5,7 @@
 #include "debug_monitor/global_monitor.h"
 #include "debug_monitor/global_debug_board.h"
 #include "texture_editor/texture_editor.h"
-#include "sprite/sprite.h"
+#include "sprite/sprite_ball.h"
 #include "ui/ui_base.h"
 
 GlobalMonitorManager g_global_monitor = GlobalMonitorManager();
@@ -34,17 +34,17 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 	m_vec_model.push_back( new ModelWithMaterialTextureAlpha() );
 	//m_vec_model.push_back( new UIBase() );
 
-	Sprite* t_sprite = new Sprite();
+	FurrySprite* t_sprite = new FurrySprite();
 	m_vec_model.push_back( t_sprite );
 
 	GlobalDebugBoard* t_global_board = new GlobalDebugBoard();
 	m_vec_model.push_back( t_global_board );
 
-	TextureEditor* t_textureEditor = new TextureEditor();
+	/*TextureEditor* t_textureEditor = new TextureEditor();
 	TextureDiaplayBoard* t_texturePlayBoard = new TextureDiaplayBoard();
 	t_textureEditor->SetPlayBoard( t_texturePlayBoard );
 	m_vec_model.push_back( t_textureEditor );
-	m_vec_model.push_back( t_texturePlayBoard );
+	m_vec_model.push_back( t_texturePlayBoard );*/
 
 	// 这部分是处理消息的
 	m_vec_eventhandle.clear();
@@ -54,6 +54,8 @@ ModelManager::ModelManager( LPDIRECT3DDEVICE9 device )
 	g_global_monitor.SetDisplayBoard( t_global_board );
 	m_vec_updater.clear();
 	m_vec_updater.push_back( &g_global_monitor );
+
+	m_vec_updater.push_back( t_sprite );
 
 	Config();
 }

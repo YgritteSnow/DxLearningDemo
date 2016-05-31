@@ -33,7 +33,7 @@ public:
 	virtual void PreRender( LPDIRECT3DDEVICE9 device );
 	virtual void Render( LPDIRECT3DDEVICE9 device );
 
-private:
+protected:
 	LPDIRECT3DTEXTURE9 m_ptex;
 };
 

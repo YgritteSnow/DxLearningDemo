@@ -3,6 +3,7 @@
 #include <Windef.h>
 #pragma comment(lib, "d3d9.lib")
 #include "config/config.h"
+#include <time.h>
 
 void TextureEditor::PreRender( LPDIRECT3DDEVICE9 device )
 {
@@ -33,7 +34,7 @@ void TextureEditor::RefreshDiaplay()
 
 inline DWORD PixelFun_sin_color( BYTE* pBits, int x, int y, int max_x, int max_y )
 {
-	return 0xff00ffff;
+	return ( DWORD(rand()) << 16 | DWORD(rand()) );
 }
 
 void TextureEditor::Edit()
@@ -53,6 +54,7 @@ void TextureEditor::Edit()
 	int max_y = 1024;
 	BYTE* pBits = (BYTE*)lock_rect.pBits;
 	BYTE* pOriginBits = pBits;
+	srand((unsigned)time(0));
 	for( int y = 0; y < max_y; ++y )
 	{
 		DWORD* start_bit = (DWORD*)pBits;

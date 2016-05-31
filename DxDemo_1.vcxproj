@@ -83,6 +83,7 @@
     <ClCompile Include="model\terrain.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="sprite\sprite.cpp" />
+    <ClCompile Include="sprite\sprite_ball.cpp" />
     <ClCompile Include="texture_editor\texture_display_board.cpp" />
     <ClCompile Include="texture_editor\texture_editor.cpp" />
     <ClCompile Include="text\textfont.cpp" />
@@ -107,6 +108,7 @@
     <ClInclude Include="manager.h" />
     <ClInclude Include="render_object_base.h" />
     <ClInclude Include="sprite\sprite.h" />
+    <ClInclude Include="sprite\sprite_ball.h" />
     <ClInclude Include="texture_editor\texture_display_board.h" />
     <ClInclude Include="texture_editor\texture_editor.h" />
     <ClInclude Include="text\textfont.h" />

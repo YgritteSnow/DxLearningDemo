@@ -3,7 +3,7 @@
 
 #include "model/model.h"
 
-class Terrain : public Model< ModelVertex >
+class Terrain : public Model
 {
 public:
 	void Config();

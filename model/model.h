@@ -29,11 +29,10 @@ struct ModelVertex// : public PosVertex
 	static DWORD FVF;
 };
 
-template <typename _Vertex>
 class Model : public RenderObjectBase
 {
 public:
-	typedef _Vertex ModelVertexStruct;
+	typedef ModelVertex ModelVertexStruct;
 
 	Model():m_vb(NULL), m_ib(NULL), m_vertex_arr(NULL), m_index_arr(NULL){};
 	virtual ~Model();
