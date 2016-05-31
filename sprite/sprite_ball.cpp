@@ -39,6 +39,8 @@ void FurrySprite::Config()
 	m_pos = D3DXVECTOR3(0, 2, 0);
 	m_radius = 5.f;
 	m_speed = 0.2f;
+
+	D3DXMatrixIdentity( &m_matrix );
 }
 
 void FurrySprite::OnResetSprites( DWORD timeDelta )
