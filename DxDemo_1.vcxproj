@@ -82,6 +82,7 @@
     <ClCompile Include="model\model_material_texture_alpha.cpp" />
     <ClCompile Include="model\terrain.cpp" />
     <ClCompile Include="manager.cpp" />
+    <ClCompile Include="physics\physics_base.cpp" />
     <ClCompile Include="sprite\sprite.cpp" />
     <ClCompile Include="sprite\sprite_ball.cpp" />
     <ClCompile Include="texture_editor\texture_display_board.cpp" />
@@ -106,6 +107,7 @@
     <ClInclude Include="model\model_material_texture_alpha.h" />
     <ClInclude Include="model\terrain.h" />
     <ClInclude Include="manager.h" />
+    <ClInclude Include="physics\physics_base.h" />
     <ClInclude Include="render_object_base.h" />
     <ClInclude Include="sprite\sprite.h" />
     <ClInclude Include="sprite\sprite_ball.h" />

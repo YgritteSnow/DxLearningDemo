@@ -40,6 +40,9 @@
     <Filter Include="源文件\sprite">
       <UniqueIdentifier>{0d8add87-8b51-4355-8daa-a89bf495e50a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\physics">
+      <UniqueIdentifier>{3608a5b0-3b5b-407d-ab75-2f1e3fd34f39}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dxdemo.cpp">
@@ -110,6 +113,9 @@
     </ClCompile>
     <ClCompile Include="sprite\sprite_ball.cpp">
       <Filter>源文件\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="physics\physics_base.cpp">
+      <Filter>源文件\physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +193,9 @@
     </ClInclude>
     <ClInclude Include="sprite\sprite_ball.h">
       <Filter>源文件\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="physics\physics_base.h">
+      <Filter>源文件\physics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

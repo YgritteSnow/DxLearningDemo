@@ -57,8 +57,8 @@ void Sprite::Render( LPDIRECT3DDEVICE9 device )
 		(void**)&vb, 
 		D3DLOCK_DISCARD 
 		);
-	vb[0]._x = 1.1f;
-	vb[0]._y = 5.1f;
+	vb[0]._x = 0.1f;
+	vb[0]._y = 0.1f;
 	vb[0]._z = 0.1f;
 	vb[0]._color = 0xff0000ff;
 	m_vb->Unlock();
