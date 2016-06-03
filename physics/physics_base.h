@@ -1,6 +1,7 @@
 #ifndef __F__MYPROJECTS_DXDEMO_1_DXMO_1__MODEL_MODEL_MATERIAL_H__
 #define __F__MYPROJECTS_DXDEMO_1_DXMO_1__MODEL_MODEL_MATERIAL_H__
 
+#include <vector>
 #include <d3dx9.h>
 #include <d3dx9math.h>
 #pragma comment(lib, "d3dx9.lib")
@@ -52,13 +53,28 @@ public:
 	{
 		return ::OnCollision( this, otherObj );
 	}
-	virtual bool OnCollision( BallCollisionObject* otherObj );
+	virtual bool OnCollision( BallCollisionObject* otherObj )
 	{
 		return ::OnCollision( this, otherObj );
 	}
 
 protected:
 	std::vector< D3DXVECTOR3 > m_points; // 局部坐标系下的坐标
+	
+	struct PrimitiveStruct
+	{
+		DWORD idx_1;
+		DWORD idx_2;
+		DWORD idx_3;
+	};
+	std::vector< PrimitiveStruct > m_primitive_indecies; // 三角形面片的列表
+
+	struct EdgeStruct
+	{
+		DWORD idx_1;
+		DWORD idx_2;
+	};
+	std::vector< EdgeStruct > m_edge_indecies; // 三角形面片的列表
 };
 
 class BallCollisionObject : public PhysicsObject
@@ -73,7 +89,7 @@ public:
 	{
 		return ::OnCollision( this, otherObj );
 	}
-	virtual bool OnCollision( BallCollisionObject* otherObj );
+	virtual bool OnCollision( BallCollisionObject* otherObj )
 	{
 		return ::OnCollision( this, otherObj );
 	}
@@ -85,50 +101,5 @@ protected:
 	float m_radius;
 };
 
-
-bool OnCollision( BallCollisionObject* ball, PolyCollisionObject* cube )
-{
-	// 分 4 种情况：
-	// 1. 球与面接触
-	// 2. 球与棱接触
-	// 3. 球与角接触
-
-	return false;
-}
-
-bool OnCollision( PolyCollisionObject* ball, BallCollisionObject* cube )
-{
-	return OnCollision( cube, ball );
-}
-
-bool OnCollision( PolyCollisionObject* ball, PolyCollisionObject* cube )
-{
-	// 分 2 种情况：
-	// 1. 边与边接触
-	// 2. 点与面接触
-
-	return false;
-}
-
-bool OnCollision( BallCollisionObject* ball, BallCollisionObject* cube )
-{
-	// 分 1 种情况：
-	// boom！
-
-	D3DXVECTOR3 dist;
-	dist.x = ball->m_mat._41 - cube->m_mat._41;
-	dist.y = ball->m_mat._42 - cube->m_mat._42;
-	dist.z = ball->m_mat._43 - cube->m_mat._43;
-	float elastic_dist = ball->GetRadius() + cube->GetRadius() - D3DXVec3LengthSq( &dist );
-
-	if( dist > 0 )
-	{
-		D3DXVec3Normalize( &dist, &dist );
-		ball->OnElastic( -dist * elastic_dist );
-		cube->OnElastic( dist * elastic_dist );
-		return true;
-	}
-	return false;
-}
 
 #endif
