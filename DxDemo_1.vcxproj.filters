@@ -16,15 +16,6 @@
     <Filter Include="源文件\texture_editor">
       <UniqueIdentifier>{11a20d50-6399-4c77-b532-20e4f0d9c572}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\ui">
-      <UniqueIdentifier>{daaaf7cd-5feb-4bc5-81a7-88987e9e579c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\model">
-      <UniqueIdentifier>{892dd088-074a-4301-9675-45d51bb69230}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\text">
-      <UniqueIdentifier>{b08bb0b0-4708-4a0b-a1e6-1a5cbcd17de8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\light">
       <UniqueIdentifier>{23619694-d6a3-4661-a7c9-9d5dac7eabea}</UniqueIdentifier>
     </Filter>
@@ -37,21 +28,36 @@
     <Filter Include="源文件\debug_monitor">
       <UniqueIdentifier>{9d72f4a4-4a1a-4b39-8830-4b267412d765}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\sprite">
-      <UniqueIdentifier>{0d8add87-8b51-4355-8daa-a89bf495e50a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\physics">
       <UniqueIdentifier>{3608a5b0-3b5b-407d-ab75-2f1e3fd34f39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\model_objects">
+      <UniqueIdentifier>{3e55f737-3b38-4b6b-a548-c3235b8e9bb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\model_objects\ui">
+      <UniqueIdentifier>{daaaf7cd-5feb-4bc5-81a7-88987e9e579c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\model_objects\text">
+      <UniqueIdentifier>{b08bb0b0-4708-4a0b-a1e6-1a5cbcd17de8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\model_objects\sprite">
+      <UniqueIdentifier>{0d8add87-8b51-4355-8daa-a89bf495e50a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\model_objects\model">
+      <UniqueIdentifier>{892dd088-074a-4301-9675-45d51bb69230}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\model_objects\terrain">
+      <UniqueIdentifier>{b4f29f10-75b2-4468-aad4-90293d42f514}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\common_interface">
+      <UniqueIdentifier>{4fa89198-6a52-4646-b15a-7a68adc5d9bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\model_factory">
+      <UniqueIdentifier>{b8de9469-66dc-4a72-b1b9-0a784e29e1b3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dxdemo.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="render_interface/manager.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="render_interface/event_handle_base.h">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="texture_editor/texture_editor.cpp">
@@ -60,28 +66,25 @@
     <ClCompile Include="texture_editor/texture_display_board.cpp">
       <Filter>源文件\texture_editor</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/ui/ui_base.cpp">
-      <Filter>源文件\ui</Filter>
+    <ClCompile Include="model_objects/ui/ui_base.cpp">
+      <Filter>源文件\model_objects\ui</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/model/model.cpp">
-      <Filter>源文件\model</Filter>
+    <ClCompile Include="model_objects/meshmodel/model.cpp">
+      <Filter>源文件\model_objects\model</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/model/model_material.cpp">
-      <Filter>源文件\model</Filter>
+    <ClCompile Include="model_objects/meshmodel/model_material.cpp">
+      <Filter>源文件\model_objects\model</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/model/model_material_texture.cpp">
-      <Filter>源文件\model</Filter>
+    <ClCompile Include="model_objects/meshmodel/model_material_texture.cpp">
+      <Filter>源文件\model_objects\model</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/model/model_material_texture_alpha.cpp">
-      <Filter>源文件\model</Filter>
+    <ClCompile Include="model_objects/meshmodel/model_material_texture_alpha.cpp">
+      <Filter>源文件\model_objects\model</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/terrain/terrain.cpp">
-      <Filter>源文件\model</Filter>
-    </ClCompile>
-    <ClCompile Include="render_objects/light/light.cpp">
+    <ClCompile Include="light/light.cpp">
       <Filter>源文件\light</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/light/light_point.cpp">
+    <ClCompile Include="light/light_point.cpp">
       <Filter>源文件\light</Filter>
     </ClCompile>
     <ClCompile Include="debug_monitor/global_debug_board.cpp">
@@ -102,63 +105,63 @@
     <ClCompile Include="camera/camera_simple_move.cpp">
       <Filter>源文件\camera</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/text/textfont.cpp">
-      <Filter>源文件\text</Filter>
+    <ClCompile Include="model_objects/text/textfont.cpp">
+      <Filter>源文件\model_objects\text</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/text/textmesh.cpp">
-      <Filter>源文件\text</Filter>
+    <ClCompile Include="model_objects/text/textmesh.cpp">
+      <Filter>源文件\model_objects\text</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/sprite/sprite.cpp">
-      <Filter>源文件\sprite</Filter>
+    <ClCompile Include="model_objects/sprite/sprite.cpp">
+      <Filter>源文件\model_objects\sprite</Filter>
     </ClCompile>
-    <ClCompile Include="render_objects/sprite/sprite_ball.cpp">
-      <Filter>源文件\sprite</Filter>
+    <ClCompile Include="model_objects/sprite/sprite_ball.cpp">
+      <Filter>源文件\model_objects\sprite</Filter>
     </ClCompile>
     <ClCompile Include="physics/physics_base.cpp">
       <Filter>源文件\physics</Filter>
     </ClCompile>
+    <ClCompile Include="model_objects/terrain/terrain.cpp">
+      <Filter>源文件\model_objects\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="render_interface/manager.cpp">
+      <Filter>源文件\common_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="render_interface/event_handle_base.h">
+      <Filter>源文件\common_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="model_factory\render_object_factory.cpp">
+      <Filter>源文件\model_factory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="render_interface/manager.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
-    <ClInclude Include="render_interface/render_object_base.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="texture_editor/texture_editor.h">
       <Filter>源文件\texture_editor</Filter>
     </ClInclude>
     <ClInclude Include="texture_editor/texture_display_board.h">
       <Filter>源文件\texture_editor</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/ui/ui_base.h">
-      <Filter>源文件\ui</Filter>
+    <ClInclude Include="model_objects/ui/ui_base.h">
+      <Filter>源文件\model_objects\ui</Filter>
     </ClInclude>
-    <ClInclude Include="render_interface/update_base.h">
-      <Filter>源文件</Filter>
+    <ClInclude Include="model_objects/meshmodel/mesh_factory.h">
+      <Filter>源文件\model_objects\model</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/model/mesh_factory.h">
-      <Filter>源文件\model</Filter>
+    <ClInclude Include="model_objects/meshmodel/model.h">
+      <Filter>源文件\model_objects\model</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/model/model.h">
-      <Filter>源文件\model</Filter>
+    <ClInclude Include="model_objects/meshmodel/model_material.h">
+      <Filter>源文件\model_objects\model</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/model/model_material.h">
-      <Filter>源文件\model</Filter>
+    <ClInclude Include="model_objects/meshmodel/model_material_texture.h">
+      <Filter>源文件\model_objects\model</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/model/model_material_texture.h">
-      <Filter>源文件\model</Filter>
+    <ClInclude Include="model_objects/meshmodel/model_material_texture_alpha.h">
+      <Filter>源文件\model_objects\model</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/model/model_material_texture_alpha.h">
-      <Filter>源文件\model</Filter>
-    </ClInclude>
-    <ClInclude Include="render_objects/terrain/terrain.h">
-      <Filter>源文件\model</Filter>
-    </ClInclude>
-    <ClInclude Include="render_objects/light/light.h">
+    <ClInclude Include="light/light.h">
       <Filter>源文件\light</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/light/light_point.h">
+    <ClInclude Include="light/light_point.h">
       <Filter>源文件\light</Filter>
     </ClInclude>
     <ClInclude Include="debug_monitor/global_debug_board.h">
@@ -179,23 +182,38 @@
     <ClInclude Include="camera/camera_simple_move.h">
       <Filter>源文件\camera</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/text/textfont.h">
-      <Filter>源文件\text</Filter>
+    <ClInclude Include="model_objects/text/textfont.h">
+      <Filter>源文件\model_objects\text</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/text/textmesh.h">
-      <Filter>源文件\text</Filter>
+    <ClInclude Include="model_objects/text/textmesh.h">
+      <Filter>源文件\model_objects\text</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/sprite/sprite.h">
-      <Filter>源文件\sprite</Filter>
+    <ClInclude Include="model_objects/sprite/sprite.h">
+      <Filter>源文件\model_objects\sprite</Filter>
     </ClInclude>
     <ClInclude Include="tool_funcs/tool_funcs.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="render_objects/sprite/sprite_ball.h">
-      <Filter>源文件\sprite</Filter>
+    <ClInclude Include="model_objects/sprite/sprite_ball.h">
+      <Filter>源文件\model_objects\sprite</Filter>
     </ClInclude>
     <ClInclude Include="physics/physics_base.h">
       <Filter>源文件\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="model_objects/terrain/terrain.h">
+      <Filter>源文件\model_objects\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="render_interface/manager.h">
+      <Filter>源文件\common_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="render_interface/render_object_base.h">
+      <Filter>源文件\common_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="render_interface/update_base.h">
+      <Filter>源文件\common_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="model_factory\render_object_factory.h">
+      <Filter>源文件\model_factory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

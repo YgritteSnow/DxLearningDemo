@@ -5,8 +5,8 @@
 #include "debug_monitor/global_monitor.h"
 #include "debug_monitor/global_debug_board.h"
 #include "texture_editor/texture_editor.h"
-#include "render_objects/sprite/sprite_ball.h"
-#include "render_objects/ui/ui_base.h"
+#include "model_objects/sprite/sprite_ball.h"
+#include "model_objects/ui/ui_base.h"
 
 GlobalMonitorManager g_global_monitor = GlobalMonitorManager();
 

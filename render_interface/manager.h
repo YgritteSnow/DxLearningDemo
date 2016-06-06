@@ -1,20 +1,20 @@
 #ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_INTERFACE_MANAGER_H__
 #define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_INTERFACE_MANAGER_H__
 
-#include "render_objects/model/model.h"
-#include "render_objects/model/model_material.h"
-#include "render_objects/model/model_material_texture.h"
-#include "render_objects/model/model_material_texture_alpha.h"
+#include "model_objects/meshmodel/model.h"
+#include "model_objects/meshmodel/model_material.h"
+#include "model_objects/meshmodel/model_material_texture.h"
+#include "model_objects/meshmodel/model_material_texture_alpha.h"
 
 #include "camera/camera.h"
 #include "camera/camera_simple_move.h"
 
-#include "render_objects/light/light.h"
-#include "render_objects/light/light_point.h"
+#include "light/light.h"
+#include "light/light_point.h"
 
-#include "render_objects/terrain/terrain.h"
+#include "model_objects/terrain/terrain.h"
 
-#include "render_objects/text/textfont.h"
+#include "model_objects/text/textfont.h"
 
 #include "render_interface/update_base.h"
 

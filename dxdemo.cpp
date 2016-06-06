@@ -6,7 +6,7 @@
 
 //#include <tchar.h>
 
-#include "render_objects/model/model.h"
+#include "model_objects/meshmodel/model.h"
 
 LPDIRECT3D9 g_d3d = NULL;
 LPDIRECT3DDEVICE9 g_d3ddevice = NULL;
