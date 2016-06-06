@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MODEL_MATERIAL_TEXTUR_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_MODEL_MATERIAL_TEXTUR_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_OBJECTS_SPRITE_SPRITE_BALL_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_OBJECTS_SPRITE_SPRITE_BALL_H__
 
 /************************************************************************/
 /* 从中间向四周发散的粒子，动的时候会拖尾                               */
@@ -53,4 +53,4 @@ private:
 	std::vector< ParticleSprite* > m_vec_sprite_dead; // 用来存储已经死亡了的粒子的指针，用于直接使用它们来进行更新
 };
 
-#endif
+#endif 

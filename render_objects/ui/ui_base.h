@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__UI_UI_BASE_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__UI_UI_BASE_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_OBJECTS_UI_UI_BASE_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_OBJECTS_UI_UI_BASE_H__
 #include <d3dx9.h>
 #include <d3dx9math.h>
 #pragma comment( lib, "d3dx9.lib" )

@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXMO_1__MODEL_MODEL_MATERIAL_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXMO_1__MODEL_MODEL_MATERIAL_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__PHYSICS_PHYSICS_BASE_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__PHYSICS_PHYSICS_BASE_H__
 
 #include <vector>
 #include <d3dx9.h>
@@ -101,5 +101,4 @@ protected:
 	float m_radius;
 };
 
-
-#endif
+#endif 

@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MANAGER_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MANAGER_H__
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_INTERFACE_MANAGER_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_INTERFACE_MANAGER_H__
 
 #include "render_objects/model/model.h"
 #include "render_objects/model/model_material.h"
