@@ -1,3 +1,5 @@
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_OBJECTS_FILE_READER_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_OBJECTS_FILE_READER_H__
 #include <fstream>
 #include <vector>
 
@@ -38,3 +40,4 @@ private:
 	char m_filename[256];
 	std::fstream* m_fstream;
 };
+#endif 

@@ -1,4 +1,5 @@
-
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_OBJECTS_MODEL_VERTEX_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_OBJECTS_MODEL_VERTEX_H__
 struct ModelVertex
 {
 	ModelVertex()
@@ -28,3 +29,4 @@ struct MtlTexVertex
 	float _u, _v;
 	static DWORD FVF;
 };
+#endif 

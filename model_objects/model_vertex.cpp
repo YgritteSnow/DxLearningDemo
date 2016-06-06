@@ -1,4 +1,4 @@
-#include "model_vertex.h"
+#include "model_objects/model_vertex.h"
 
 
 DWORD ModelVertex::FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_DIFFUSE | D3DFVF_TEX1;

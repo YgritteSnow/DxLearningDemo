@@ -1,4 +1,4 @@
-#include "file_reader.h"
+#include "model_objects/file_reader.h"
 #include <deque>
 
 IOFileBase::IOFileBase( const char* filename )

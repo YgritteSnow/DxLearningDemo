@@ -1,5 +1,5 @@
 #include "model_objects/meshmodel/model_material_texture.h"
-#include "model_vertex.h"
+#include "model_objects/model_vertex.h"
 
 #define TEX_FILE_PATH L"tex_alpha.png"
 

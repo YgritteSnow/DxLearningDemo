@@ -1,7 +1,7 @@
 #include "model_objects/meshmodel/model.h"
 #include "model_objects/meshmodel/mesh_factory.h"
 #include "render_interface/manager.h"
-#include "model_vertex.h"
+#include "model_objects/model_vertex.h"
 
 /************************************************************************/
 /*                                                                      */
