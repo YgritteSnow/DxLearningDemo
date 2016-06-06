@@ -1,11 +1,11 @@
 #include "model_objects/meshmodel/model.h"
 #include "model_objects/meshmodel/mesh_factory.h"
 #include "render_interface/manager.h"
+#include "model_vertex.h"
 
 /************************************************************************/
 /*                                                                      */
 /************************************************************************/
-DWORD ModelVertex::FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_DIFFUSE | D3DFVF_TEX1;
 
 Model::~Model()
 {

@@ -1,8 +1,7 @@
 #include "model_objects/meshmodel/model_material_texture.h"
+#include "model_vertex.h"
 
 #define TEX_FILE_PATH L"tex_alpha.png"
-
-DWORD MtlTexVertex::FVF = D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_DIFFUSE | D3DFVF_TEX1;
 
 void ModelWithMaterialTexture::Config()
 {
