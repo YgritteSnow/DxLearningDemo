@@ -6,7 +6,7 @@
 #include <d3dx9math.h>
 #pragma comment(lib, "d3dx9.lib")
 
-#include "update_base.h"
+#include "render_interface/update_base.h"
 
 /************************************************************************/
 /** 分为两种物体：

@@ -48,153 +48,153 @@
     <ClCompile Include="dxdemo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="manager.cpp">
+    <ClCompile Include="render_interface/manager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="event_handle_base.h">
+    <ClCompile Include="render_interface/event_handle_base.h">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="texture_editor\texture_editor.cpp">
+    <ClCompile Include="texture_editor/texture_editor.cpp">
       <Filter>源文件\texture_editor</Filter>
     </ClCompile>
-    <ClCompile Include="texture_editor\texture_display_board.cpp">
+    <ClCompile Include="texture_editor/texture_display_board.cpp">
       <Filter>源文件\texture_editor</Filter>
     </ClCompile>
-    <ClCompile Include="ui\ui_base.cpp">
+    <ClCompile Include="render_objects/ui/ui_base.cpp">
       <Filter>源文件\ui</Filter>
     </ClCompile>
-    <ClCompile Include="model\model.cpp">
+    <ClCompile Include="render_objects/model/model.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="model\model_material.cpp">
+    <ClCompile Include="render_objects/model/model_material.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="model\model_material_texture.cpp">
+    <ClCompile Include="render_objects/model/model_material_texture.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="model\model_material_texture_alpha.cpp">
+    <ClCompile Include="render_objects/model/model_material_texture_alpha.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="model\terrain.cpp">
+    <ClCompile Include="render_objects/terrain/terrain.cpp">
       <Filter>源文件\model</Filter>
     </ClCompile>
-    <ClCompile Include="light\light.cpp">
+    <ClCompile Include="render_objects/light/light.cpp">
       <Filter>源文件\light</Filter>
     </ClCompile>
-    <ClCompile Include="light\light_point.cpp">
+    <ClCompile Include="render_objects/light/light_point.cpp">
       <Filter>源文件\light</Filter>
     </ClCompile>
-    <ClCompile Include="debug_monitor\global_debug_board.cpp">
+    <ClCompile Include="debug_monitor/global_debug_board.cpp">
       <Filter>源文件\debug_monitor</Filter>
     </ClCompile>
-    <ClCompile Include="debug_monitor\global_monitor.cpp">
+    <ClCompile Include="debug_monitor/global_monitor.cpp">
       <Filter>源文件\debug_monitor</Filter>
     </ClCompile>
-    <ClCompile Include="debug_monitor\global_monitor_fps.cpp">
+    <ClCompile Include="debug_monitor/global_monitor_fps.cpp">
       <Filter>源文件\debug_monitor</Filter>
     </ClCompile>
-    <ClCompile Include="config\config.cpp">
+    <ClCompile Include="config/config.cpp">
       <Filter>源文件\config</Filter>
     </ClCompile>
-    <ClCompile Include="camera\camera.cpp">
+    <ClCompile Include="camera/camera.cpp">
       <Filter>源文件\camera</Filter>
     </ClCompile>
-    <ClCompile Include="camera\camera_simple_move.cpp">
+    <ClCompile Include="camera/camera_simple_move.cpp">
       <Filter>源文件\camera</Filter>
     </ClCompile>
-    <ClCompile Include="text\textfont.cpp">
+    <ClCompile Include="render_objects/text/textfont.cpp">
       <Filter>源文件\text</Filter>
     </ClCompile>
-    <ClCompile Include="text\textmesh.cpp">
+    <ClCompile Include="render_objects/text/textmesh.cpp">
       <Filter>源文件\text</Filter>
     </ClCompile>
-    <ClCompile Include="sprite\sprite.cpp">
+    <ClCompile Include="render_objects/sprite/sprite.cpp">
       <Filter>源文件\sprite</Filter>
     </ClCompile>
-    <ClCompile Include="sprite\sprite_ball.cpp">
+    <ClCompile Include="render_objects/sprite/sprite_ball.cpp">
       <Filter>源文件\sprite</Filter>
     </ClCompile>
-    <ClCompile Include="physics\physics_base.cpp">
+    <ClCompile Include="physics/physics_base.cpp">
       <Filter>源文件\physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="manager.h">
+    <ClInclude Include="render_interface/manager.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="render_object_base.h">
+    <ClInclude Include="render_interface/render_object_base.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="texture_editor\texture_editor.h">
+    <ClInclude Include="texture_editor/texture_editor.h">
       <Filter>源文件\texture_editor</Filter>
     </ClInclude>
-    <ClInclude Include="texture_editor\texture_display_board.h">
+    <ClInclude Include="texture_editor/texture_display_board.h">
       <Filter>源文件\texture_editor</Filter>
     </ClInclude>
-    <ClInclude Include="ui\ui_base.h">
+    <ClInclude Include="render_objects/ui/ui_base.h">
       <Filter>源文件\ui</Filter>
     </ClInclude>
-    <ClInclude Include="update_base.h">
+    <ClInclude Include="render_interface/update_base.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="model\mesh_factory.h">
+    <ClInclude Include="render_objects/model/mesh_factory.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="model\model.h">
+    <ClInclude Include="render_objects/model/model.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="model\model_material.h">
+    <ClInclude Include="render_objects/model/model_material.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="model\model_material_texture.h">
+    <ClInclude Include="render_objects/model/model_material_texture.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="model\model_material_texture_alpha.h">
+    <ClInclude Include="render_objects/model/model_material_texture_alpha.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="model\terrain.h">
+    <ClInclude Include="render_objects/terrain/terrain.h">
       <Filter>源文件\model</Filter>
     </ClInclude>
-    <ClInclude Include="light\light.h">
+    <ClInclude Include="render_objects/light/light.h">
       <Filter>源文件\light</Filter>
     </ClInclude>
-    <ClInclude Include="light\light_point.h">
+    <ClInclude Include="render_objects/light/light_point.h">
       <Filter>源文件\light</Filter>
     </ClInclude>
-    <ClInclude Include="debug_monitor\global_debug_board.h">
+    <ClInclude Include="debug_monitor/global_debug_board.h">
       <Filter>源文件\debug_monitor</Filter>
     </ClInclude>
-    <ClInclude Include="debug_monitor\global_monitor.h">
+    <ClInclude Include="debug_monitor/global_monitor.h">
       <Filter>源文件\debug_monitor</Filter>
     </ClInclude>
-    <ClInclude Include="debug_monitor\global_monitor_fps.h">
+    <ClInclude Include="debug_monitor/global_monitor_fps.h">
       <Filter>源文件\debug_monitor</Filter>
     </ClInclude>
-    <ClInclude Include="config\config.h">
+    <ClInclude Include="config/config.h">
       <Filter>源文件\config</Filter>
     </ClInclude>
-    <ClInclude Include="camera\camera.h">
+    <ClInclude Include="camera/camera.h">
       <Filter>源文件\camera</Filter>
     </ClInclude>
-    <ClInclude Include="camera\camera_simple_move.h">
+    <ClInclude Include="camera/camera_simple_move.h">
       <Filter>源文件\camera</Filter>
     </ClInclude>
-    <ClInclude Include="text\textfont.h">
+    <ClInclude Include="render_objects/text/textfont.h">
       <Filter>源文件\text</Filter>
     </ClInclude>
-    <ClInclude Include="text\textmesh.h">
+    <ClInclude Include="render_objects/text/textmesh.h">
       <Filter>源文件\text</Filter>
     </ClInclude>
-    <ClInclude Include="sprite\sprite.h">
+    <ClInclude Include="render_objects/sprite/sprite.h">
       <Filter>源文件\sprite</Filter>
     </ClInclude>
-    <ClInclude Include="tool_funcs.h">
+    <ClInclude Include="tool_funcs/tool_funcs.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="sprite\sprite_ball.h">
+    <ClInclude Include="render_objects/sprite/sprite_ball.h">
       <Filter>源文件\sprite</Filter>
     </ClInclude>
-    <ClInclude Include="physics\physics_base.h">
+    <ClInclude Include="physics/physics_base.h">
       <Filter>源文件\physics</Filter>
     </ClInclude>
   </ItemGroup>

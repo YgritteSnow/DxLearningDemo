@@ -5,7 +5,7 @@
 #include <string>
 #include <Windows.h>
 
-#include "update_base.h"
+#include "render_interface/update_base.h"
 
 class GlobalMonitorBase : public UpdateBase
 {

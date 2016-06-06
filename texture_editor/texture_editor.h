@@ -9,7 +9,7 @@
 #pragma comment( lib, "d3dx9.lib" )
 
 #include "texture_editor/texture_display_board.h"
-#include "render_object_base.h"
+#include "render_interface/render_object_base.h"
 
 class TextureEditor : public RenderObjectBase
 {

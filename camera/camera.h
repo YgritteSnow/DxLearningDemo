@@ -4,8 +4,8 @@
 #include <d3dx9math.h>
 #include <d3d9.h>
 #pragma comment(lib, "d3dx9.lib")
-#include "render_object_base.h"
-#include "event_handle_base.h"
+#include "render_interface/render_object_base.h"
+#include "render_interface/event_handle_base.h"
 
 class Camera : public RenderObjectBase, public EventHandlerBase
 {

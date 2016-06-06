@@ -1,12 +1,12 @@
 #include <d3d9.h>
 #pragma comment( lib, "d3d9.lib" )
 
-#include "manager.h"
+#include "render_interface/manager.h"
 #include "config/config.h"
 
 //#include <tchar.h>
 
-#include "model/model.h"
+#include "render_objects/model/model.h"
 
 LPDIRECT3D9 g_d3d = NULL;
 LPDIRECT3DDEVICE9 g_d3ddevice = NULL;
