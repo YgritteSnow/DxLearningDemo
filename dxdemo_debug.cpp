@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#ifdef USE_DEBUG
+#if USE_DEBUG
 int main()
 #else
 int ygritte_main()
@@ -30,8 +30,8 @@ int ygritte_main()
 	//f.WriteFile_addRoot( "F:\\a.txt", root_sec );
 
 	DataSection* newRoot = NULL;
-	FileReaderManager::GetFileReaderManager().ReadFile_ygritte( "F:\\a.txt", newRoot );
-	FileReaderManager::GetFileReaderManager().WriteFile_ygritte( "F:\\a.txt", newRoot, true );
+	FileReaderManager::GetFileReaderManager().ReadFile_dataSec( "F:\\a.txt", newRoot );
+	FileReaderManager::GetFileReaderManager().WriteFile_dataSec( "F:\\a.txt", newRoot, true );
 
 	return 0;
 }

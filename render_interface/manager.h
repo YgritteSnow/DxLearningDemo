@@ -21,24 +21,28 @@
 #include <vector>
 
 /************************************************************************/
-/*                                                                      */
+/* 掌管所有可渲染的物体
+*/
 /************************************************************************/
 
 class ModelManager
 {
+private:
+	explicit ModelManager();
 public:
-	ModelManager( LPDIRECT3DDEVICE9 device );
 	~ModelManager();
 
-	void Config();
+	static ModelManager& GetModelManager()
+	{
+		static ModelManager model_manager;
+		return model_manager;
+	}
+
 	void PreRender();
 	void Render();
-
 	void Clear();
-
-	
-	float GetCurTime();
 	void Update();
+
 	bool OnKeyDown( WPARAM wParam );
 	bool HandleLeftMouseButton( bool isDown );
 	bool HandleMouseMove( int x, int y );
@@ -46,6 +50,10 @@ public:
 	static const D3DXMATRIX* GetCameraMatrix();
 	static const D3DXMATRIX* GetInvCameraMatrix();
 	static const D3DXMATRIX* GetProjMatrix();
+
+private:
+	void Config();
+	float GetCurTime();
 
 private:
 	LPDIRECT3DDEVICE9 m_device;

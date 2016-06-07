@@ -3,14 +3,12 @@
 
 #include "render_interface/manager.h"
 #include "config/config.h"
-
-//#include <tchar.h>
+#include "game_manager.h"
 
 #include "model_objects/meshmodel/model.h"
 
 LPDIRECT3D9 g_d3d = NULL;
 LPDIRECT3DDEVICE9 g_d3ddevice = NULL;
-ModelManager* g_mng = NULL;
 
 void Render()
 {
@@ -27,11 +25,6 @@ void Clear()
 	{
 		g_d3ddevice->Release();
 		g_d3d = NULL;
-	}
-	if( g_mng )
-	{
-		delete g_mng;
-		g_mng = NULL;
 	}
 }
 
@@ -70,15 +63,15 @@ LRESULT CALLBACK MyWinProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 		break;
 
 	case WM_LBUTTONDOWN:
-		g_mng->HandleLeftMouseButton( true );
+		GameManager::GetGameManager().HandleLeftMouseButton( true );
 		break;
 
 	case WM_LBUTTONUP:
-		g_mng->HandleLeftMouseButton( false );
+		GameManager::GetGameManager().HandleLeftMouseButton( false );
 		break;
 
 	case WM_MOUSEMOVE:
-		g_mng->HandleMouseMove( LOWORD( lParam ), HIWORD( lParam ) );
+		GameManager::GetGameManager().HandleMouseMove( LOWORD( lParam ), HIWORD( lParam ) );
 		break;
 
 	case WM_KEYDOWN:
@@ -90,7 +83,7 @@ LRESULT CALLBACK MyWinProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 				break;
 
 			default:
-				g_mng->OnKeyDown( wParam );
+				GameManager::GetGameManager().OnKeyDown( wParam );
 			}
 		}
 		break;
@@ -103,7 +96,7 @@ LRESULT CALLBACK MyWinProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 	return DefWindowProc( hwnd, msg, wParam, lParam );
 }
 
-#ifdef USE_DEBUG
+#if USE_DEBUG
 INT WINAPI ygritte_WinMain( HINSTANCE hinst, HINSTANCE, LPSTR cmdline, INT nCmd )
 #else
 INT WINAPI WinMain( HINSTANCE hinst, HINSTANCE, LPSTR cmdline, INT nCmd )
@@ -133,11 +126,9 @@ INT WINAPI WinMain( HINSTANCE hinst, HINSTANCE, LPSTR cmdline, INT nCmd )
 	{
 		if( SUCCEEDED( InitD3d( hwnd ) ) )
 		{
-			g_mng = new ModelManager( g_d3ddevice );
-
 			ShowWindow( hwnd, SW_SHOWDEFAULT );
 			UpdateWindow( hwnd );
-			g_mng->PreRender();
+			GameManager::GetGameManager().PreRender();
 
 			MSG msg;
 			ZeroMemory( &msg, sizeof(msg));
@@ -151,8 +142,8 @@ INT WINAPI WinMain( HINSTANCE hinst, HINSTANCE, LPSTR cmdline, INT nCmd )
 			}
 			else
 			{
-				g_mng->Render();
-				g_mng->Update();
+				GameManager::GetGameManager().Render();
+				GameManager::GetGameManager().Update();
 			}
 		}
 	}

@@ -10,6 +10,10 @@
 
 GlobalMonitorManager g_global_monitor = GlobalMonitorManager();
 
+#include <d3d9.h>
+#pragma comment( lib, "d3d9.lib" )
+extern LPDIRECT3DDEVICE9 g_d3ddevice;
+
 
 /************************************************************************/
 /*                                                                      */
@@ -17,10 +21,10 @@ GlobalMonitorManager g_global_monitor = GlobalMonitorManager();
 
 Camera* ModelManager::s_pCamera = NULL;
 
-ModelManager::ModelManager( LPDIRECT3DDEVICE9 device ) 
+ModelManager::ModelManager() 
 	:m_last_time(0)
 {
-	m_device = device;
+	m_device = g_d3ddevice;
 	
 	// 这部分是时刻渲染的
 	m_vec_model.clear();

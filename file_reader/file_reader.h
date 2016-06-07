@@ -15,8 +15,8 @@ public:
 		return fileReaderManager; 
 	}
 
-	void WriteFile_ygritte( const char* filename, DataSection* in_sec, bool ifNullRoot ){ m_iofile_ygritte.WriteFile( filename, in_sec, ifNullRoot ); }
-	void ReadFile_ygritte( const char* filename, DataSection*& out_sec ){ m_iofile_ygritte.ReadFile( filename, out_sec ); }
+	void WriteFile_dataSec( const char* filename, DataSection* in_sec, bool ifNullRoot ){ m_iofile_ygritte.WriteFile( filename, in_sec, ifNullRoot ); }
+	void ReadFile_dataSec( const char* filename, DataSection*& out_sec ){ m_iofile_ygritte.ReadFile( filename, out_sec ); }
 
 private:
 	void InitSelf(){}

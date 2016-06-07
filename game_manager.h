@@ -17,9 +17,41 @@ public:
 		return game_manager; 
 	}
 
+	// жиди
+	void PreRender()
+	{
+		ModelManager::GetModelManager().PreRender();
+	}
+	void Render()
+	{
+		ModelManager::GetModelManager().Render();
+	}
+	void Update()
+	{
+		ModelManager::GetModelManager().Update();
+	}
+	void Clear()
+	{
+		ModelManager::GetModelManager().Clear();
+	}
+
+	bool OnKeyDown( WPARAM wParam )
+	{
+		return ModelManager::GetModelManager().OnKeyDown( wParam );
+	}
+	bool HandleLeftMouseButton( bool isDown )
+	{
+		return ModelManager::GetModelManager().HandleLeftMouseButton( isDown );
+	}
+	bool HandleMouseMove( int x, int y )
+	{
+		return ModelManager::GetModelManager().HandleMouseMove( x, y );
+	}
+	
 private:
 	void InitGame()
 	{
 		FileReaderManager::GetFileReaderManager();
+		ModelManager::GetModelManager();
 	}
 };
