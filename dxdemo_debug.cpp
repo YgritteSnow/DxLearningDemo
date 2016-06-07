@@ -1,5 +1,5 @@
 #include "config/config.h"
-#include "model_objects/file_reader.h"
+#include "file_reader/file_reader.h"
 
 #include <iostream>
 
@@ -9,7 +9,6 @@ int main()
 int ygritte_main()
 #endif
 {
-	IOFileBase f;
 	//DataSection* root_sec = new DataSection();
 	//root_sec->name = "root";
 	//root_sec->data = "data";
@@ -31,9 +30,8 @@ int ygritte_main()
 	//f.WriteFile_addRoot( "F:\\a.txt", root_sec );
 
 	DataSection* newRoot = NULL;
-	f.ReadFile( "F:\\a.txt", newRoot );
-	
-	f.WriteFile_useNullRoot( "F:\\a.txt", newRoot );
+	FileReaderManager::GetFileReaderManager().ReadFile_ygritte( "F:\\a.txt", newRoot );
+	FileReaderManager::GetFileReaderManager().WriteFile_ygritte( "F:\\a.txt", newRoot, true );
 
 	return 0;
 }

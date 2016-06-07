@@ -74,8 +74,8 @@
     <ClCompile Include="debug_monitor/global_monitor_fps.cpp" />
     <ClCompile Include="dxdemo.cpp" />
     <ClCompile Include="dxdemo_debug.cpp" />
+    <ClCompile Include="file_reader/file_reader_ygritte.cpp" />
     <ClCompile Include="model_factory/render_object_factory.cpp" />
-    <ClCompile Include="model_objects/file_reader.cpp" />
     <ClCompile Include="model_objects/model_vertex.cpp" />
     <ClCompile Include="render_interface/event_handle_base.h" />
     <ClCompile Include="light/light.cpp" />
@@ -102,6 +102,9 @@
     <ClInclude Include="debug_monitor/global_debug_board.h" />
     <ClInclude Include="debug_monitor/global_monitor.h" />
     <ClInclude Include="debug_monitor/global_monitor_fps.h" />
+    <ClInclude Include="file_reader/data_section.h" />
+    <ClInclude Include="file_reader/file_reader_ygritte.h" />
+    <ClInclude Include="game_manager.h" />
     <ClInclude Include="light/light.h" />
     <ClInclude Include="light/light_point.h" />
     <ClInclude Include="model_factory/render_object_factory.h" />
@@ -111,7 +114,7 @@
     <ClInclude Include="model_objects/meshmodel/model_material_texture.h" />
     <ClInclude Include="model_objects/meshmodel/model_material_texture_alpha.h" />
     <ClInclude Include="model_objects/terrain/terrain.h" />
-    <ClInclude Include="model_objects/file_reader.h" />
+    <ClInclude Include="file_reader/file_reader.h" />
     <ClInclude Include="model_objects/model_vertex.h" />
     <ClInclude Include="render_interface/manager.h" />
     <ClInclude Include="physics/physics_base.h" />

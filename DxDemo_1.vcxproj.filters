@@ -55,6 +55,9 @@
     <Filter Include="源文件\model_factory">
       <UniqueIdentifier>{b8de9469-66dc-4a72-b1b9-0a784e29e1b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\file_reader">
+      <UniqueIdentifier>{69485617-265c-4164-9941-a3fd5769791c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dxdemo.cpp">
@@ -138,8 +141,8 @@
     <ClCompile Include="dxdemo_debug.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="model_objects/file_reader.cpp">
-      <Filter>源文件\model_objects</Filter>
+    <ClCompile Include="file_reader/file_reader_ygritte.cpp">
+      <Filter>源文件\file_reader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -227,8 +230,17 @@
     <ClInclude Include="model_objects/model_vertex.h">
       <Filter>源文件\model_objects</Filter>
     </ClInclude>
-    <ClInclude Include="model_objects/file_reader.h">
-      <Filter>源文件\model_objects</Filter>
+    <ClInclude Include="file_reader/file_reader.h">
+      <Filter>源文件\file_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="game_manager.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="file_reader/file_reader_ygritte.h">
+      <Filter>源文件\file_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="file_reader/data_section.h">
+      <Filter>源文件\file_reader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

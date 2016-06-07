@@ -1,19 +1,19 @@
-#include "model_objects/file_reader.h"
+#include "file_reader/file_reader_ygritte.h"
 #include <deque>
 
 const char Tag_Space = '-';
 const char Tag_Name = '|';
 
-IOFileBase::IOFileBase()
+IOFile_ygritte::IOFile_ygritte()
 {
 }
 
-IOFileBase::~IOFileBase()
+IOFile_ygritte::~IOFile_ygritte()
 {
 
 }
 
-bool IOFileBase::OpenFile( const char* filename, std::ios_base::open_mode iosopenmode )
+bool IOFile_ygritte::OpenFile( const char* filename, std::ios_base::open_mode iosopenmode )
 {
 	CloseFile();
 	m_fstream.open( filename, iosopenmode );
@@ -21,7 +21,7 @@ bool IOFileBase::OpenFile( const char* filename, std::ios_base::open_mode iosope
 	return true;
 }
 
-bool IOFileBase::CloseFile()
+bool IOFile_ygritte::CloseFile()
 {
 	if( m_fstream.is_open() )
 	{
@@ -31,7 +31,19 @@ bool IOFileBase::CloseFile()
 	return true;
 }
 
-bool IOFileBase::WriteFile_addRoot( const char* filename, DataSection* in_rootSec )
+bool IOFile_ygritte::WriteFile( const char* filename, DataSection* in_rootSec, bool ifNullRoot )
+{
+	if( ifNullRoot )
+	{
+		return WriteFile_useNullRoot( filename, in_rootSec );
+	}
+	else
+	{
+		return WriteFile_addRoot( filename, in_rootSec );
+	}
+}
+
+bool IOFile_ygritte::WriteFile_addRoot( const char* filename, DataSection* in_rootSec )
 {
 	OpenFile( filename, std::ios::app );
 	WriteFileData( in_rootSec );
@@ -39,7 +51,7 @@ bool IOFileBase::WriteFile_addRoot( const char* filename, DataSection* in_rootSe
 	return true;
 }
 
-bool IOFileBase::WriteFile_useNullRoot( const char* filename, DataSection* in_rootSec )
+bool IOFile_ygritte::WriteFile_useNullRoot( const char* filename, DataSection* in_rootSec )
 {
 	OpenFile( filename, std::ios::out );
 	for( auto it = in_rootSec->children.begin(); it != in_rootSec->children.end(); ++it )
@@ -50,7 +62,7 @@ bool IOFileBase::WriteFile_useNullRoot( const char* filename, DataSection* in_ro
 	return true;
 }
 
-void IOFileBase::WriteFileData( DataSection* rootSec )
+void IOFile_ygritte::WriteFileData( DataSection* rootSec )
 {
 	// 采用先序遍历来遍历多叉树
 	if( !m_fstream.is_open() )
@@ -64,7 +76,7 @@ void IOFileBase::WriteFileData( DataSection* rootSec )
 	{
 		DataSectionHelper cur_sec = temp_tack.back();
 		temp_tack.pop_back();
-		
+
 		if( cur_sec.sec->GetChildren().size() >= 1 )
 		{
 			int idx = cur_sec.sec->GetChildren().size() - 1;
@@ -80,7 +92,7 @@ void IOFileBase::WriteFileData( DataSection* rootSec )
 	}
 }
 
-void IOFileBase::WriteLineData( const DataSectionHelper& dataSec )
+void IOFile_ygritte::WriteLineData( const DataSectionHelper& dataSec )
 {
 	int i = dataSec.depth;
 	while( i-- >= 0 )
@@ -90,7 +102,7 @@ void IOFileBase::WriteLineData( const DataSectionHelper& dataSec )
 	m_fstream<<dataSec.sec->name.c_str()<<Tag_Name<<dataSec.sec->data.c_str()<<std::endl;
 }
 
-bool IOFileBase::ReadFile( const char* filename, DataSection*& out_rootSec )
+bool IOFile_ygritte::ReadFile( const char* filename, DataSection*& out_rootSec )
 {
 	OpenFile( filename, std::ios::in );
 	ReadFileData( out_rootSec );
@@ -98,7 +110,7 @@ bool IOFileBase::ReadFile( const char* filename, DataSection*& out_rootSec )
 	return true;
 }
 
-void IOFileBase::ReadFileData( DataSection*& out_rootSec )
+void IOFile_ygritte::ReadFileData( DataSection*& out_rootSec )
 {
 	// 默认文件是按照先序遍历的方式存储的
 	if( !m_fstream.is_open() )
@@ -140,7 +152,7 @@ void IOFileBase::ReadFileData( DataSection*& out_rootSec )
 	}
 }
 
-bool IOFileBase::ReadLineData( DataSectionHelper& out_rootSec )
+bool IOFile_ygritte::ReadLineData( DataSectionHelper& out_rootSec )
 {
 	if( !m_fstream.is_open() )
 		return false;
@@ -156,7 +168,7 @@ bool IOFileBase::ReadLineData( DataSectionHelper& out_rootSec )
 			if( buf[idx_name] != Tag_Space )
 				break;
 		}
-		
+
 		int idx_data = 0;
 		for( ; idx_data < bufsize; ++idx_data )
 		{
