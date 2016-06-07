@@ -144,6 +144,9 @@
     <ClCompile Include="file_reader/file_reader_ygritte.cpp">
       <Filter>源文件\file_reader</Filter>
     </ClCompile>
+    <ClCompile Include="model_objects\meshmodel\texture.cpp">
+      <Filter>源文件\model_objects\model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="texture_editor/texture_editor.h">
@@ -241,6 +244,9 @@
     </ClInclude>
     <ClInclude Include="file_reader/data_section.h">
       <Filter>源文件\file_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="model_objects\meshmodel\texture.h">
+      <Filter>源文件\model_objects\model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

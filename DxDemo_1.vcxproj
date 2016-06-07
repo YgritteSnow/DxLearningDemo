@@ -77,6 +77,7 @@
     <ClCompile Include="file_reader/file_reader_ygritte.cpp" />
     <ClCompile Include="model_factory/render_object_factory.cpp" />
     <ClCompile Include="model_objects/model_vertex.cpp" />
+    <ClCompile Include="model_objects\meshmodel\texture.cpp" />
     <ClCompile Include="render_interface/event_handle_base.h" />
     <ClCompile Include="light/light.cpp" />
     <ClCompile Include="light/light_point.cpp" />
@@ -116,6 +117,7 @@
     <ClInclude Include="model_objects/terrain/terrain.h" />
     <ClInclude Include="file_reader/file_reader.h" />
     <ClInclude Include="model_objects/model_vertex.h" />
+    <ClInclude Include="model_objects\meshmodel\texture.h" />
     <ClInclude Include="render_interface/manager.h" />
     <ClInclude Include="physics/physics_base.h" />
     <ClInclude Include="render_interface/render_object_base.h" />
