@@ -11,7 +11,6 @@ struct DataSection
 	std::string name;
 	std::string data;
 	DataSectionVec children;
-	int depth;
 
 	void AddChild( DataSection* child )
 	{
@@ -23,21 +22,35 @@ struct DataSection
 	}
 };
 
+struct DataSectionHelper
+{
+	DataSectionHelper():sec(NULL), depth(-1){}
+	DataSectionHelper( DataSection* _sec, int _depth ):sec(_sec), depth(_depth){}
+	~DataSectionHelper(){}
+
+	DataSection* sec;
+	int depth;
+};
+
 class IOFileBase
 {
 public:
-	IOFileBase( const char* filename );
+	IOFileBase();
 	~IOFileBase();
 
-	bool WriteFile( const char* filename, DataSection* rootSec );
+	bool WriteFile_addRoot( const char* filename, DataSection* in_rootSec );
+	bool WriteFile_useNullRoot( const char* filename, DataSection* in_rootSec );
+
+	bool ReadFile( const char* filename, DataSection*& out_rootSec );
 
 private:
-	bool OpenFile( const char* filename );
+	bool OpenFile( const char* filename, std::ios_base::open_mode iosopenmode );
 	bool CloseFile();
 	void WriteFileData( DataSection* dataSec );
-	void WriteLineData( DataSection* dataSec );
+	void ReadFileData( DataSection*& out_rootSec );
+	void WriteLineData( const DataSectionHelper& dataSec );
+	bool ReadLineData( DataSectionHelper& out_rootSec );
 
-	char m_filename[256];
-	std::fstream* m_fstream;
+	std::fstream m_fstream;
 };
 #endif 

@@ -103,7 +103,11 @@ LRESULT CALLBACK MyWinProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 	return DefWindowProc( hwnd, msg, wParam, lParam );
 }
 
+#ifdef USE_DEBUG
+INT WINAPI ygritte_WinMain( HINSTANCE hinst, HINSTANCE, LPSTR cmdline, INT nCmd )
+#else
 INT WINAPI WinMain( HINSTANCE hinst, HINSTANCE, LPSTR cmdline, INT nCmd )
+#endif
 {
 	WNDCLASSEX wc = {
 		sizeof( WNDCLASSEX ), 

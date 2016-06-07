@@ -1,6 +1,8 @@
 #ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CONFIG_CONFIG_H__
 #define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__CONFIG_CONFIG_H__
 
+#define USE_DEBUG
+
 extern int g_screen_pixel_width;
 extern int g_screen_pixel_height;
 extern float g_fov;

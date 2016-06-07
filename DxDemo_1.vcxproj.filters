@@ -135,8 +135,11 @@
     <ClCompile Include="model_objects/model_vertex.cpp">
       <Filter>源文件\model_objects</Filter>
     </ClCompile>
+    <ClCompile Include="dxdemo_debug.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="model_objects/file_reader.cpp">
-      <Filter>源文件\model_factory</Filter>
+      <Filter>源文件\model_objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -221,10 +224,10 @@
     <ClInclude Include="model_factory/render_object_factory.h">
       <Filter>源文件\model_factory</Filter>
     </ClInclude>
-    <ClInclude Include="model_objects/file_reader.h">
-      <Filter>源文件\model_factory</Filter>
-    </ClInclude>
     <ClInclude Include="model_objects/model_vertex.h">
+      <Filter>源文件\model_objects</Filter>
+    </ClInclude>
+    <ClInclude Include="model_objects/file_reader.h">
       <Filter>源文件\model_objects</Filter>
     </ClInclude>
   </ItemGroup>

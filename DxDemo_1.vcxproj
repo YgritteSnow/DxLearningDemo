@@ -73,6 +73,7 @@
     <ClCompile Include="debug_monitor/global_monitor.cpp" />
     <ClCompile Include="debug_monitor/global_monitor_fps.cpp" />
     <ClCompile Include="dxdemo.cpp" />
+    <ClCompile Include="dxdemo_debug.cpp" />
     <ClCompile Include="model_factory/render_object_factory.cpp" />
     <ClCompile Include="model_objects/file_reader.cpp" />
     <ClCompile Include="model_objects/model_vertex.cpp" />

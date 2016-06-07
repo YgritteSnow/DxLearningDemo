@@ -1,5 +1,8 @@
 #ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_OBJECTS_MODEL_VERTEX_H__
 #define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_OBJECTS_MODEL_VERTEX_H__
+
+#include <Windows.h>
+
 struct ModelVertex
 {
 	ModelVertex()
