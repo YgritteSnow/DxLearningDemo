@@ -26,4 +26,5 @@ private:
 
 	std::fstream m_fstream;
 };
+
 #endif 
