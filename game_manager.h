@@ -1,4 +1,5 @@
-
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GAME_MANAGER_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__GAME_MANAGER_H__
 #include "file_reader/file_reader.h"
 /************************************************************************/
 /* 统筹管理游戏全局的单例、配置等的类
@@ -55,3 +56,4 @@ private:
 		ModelManager::GetModelManager();
 	}
 };
+#endif 

@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_OBJECTS_FILE_READER___
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_OBJECTS_FILE_READER___
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READER_DATA_SECTION_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READER_DATA_SECTION_H__
 #include <vector>
 
 struct DataSection;
@@ -31,4 +31,4 @@ struct DataSectionHelper
 	int depth;
 };
 
-#endif
+#endif 

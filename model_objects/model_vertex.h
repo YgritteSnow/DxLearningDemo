@@ -32,4 +32,5 @@ struct MtlTexVertex
 	float _u, _v;
 	static DWORD FVF;
 };
+
 #endif 

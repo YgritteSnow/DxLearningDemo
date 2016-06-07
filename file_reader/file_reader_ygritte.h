@@ -1,3 +1,5 @@
+#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READER_FILE_READER_YGRITTE_H__
+#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READER_FILE_READER_YGRITTE_H__
 #include <fstream>
 #include "file_reader/data_section.h"
 
@@ -24,3 +26,4 @@ private:
 
 	std::fstream m_fstream;
 };
+#endif 
