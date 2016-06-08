@@ -6,7 +6,6 @@
 
 #include "light/light.h"
 #include <Windows.h>
-#include "model_objects/meshmodel/model_material.h"
 
 class LightPoint : public Light
 {
@@ -20,7 +19,6 @@ public:
 
 private:
 	D3DXVECTOR3 m_pos;
-	ModelWithMaterial m_sunmodel;
 };
 
 #endif 

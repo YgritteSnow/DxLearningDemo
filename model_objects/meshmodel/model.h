@@ -5,38 +5,30 @@
 #include <d3dx9math.h>
 #pragma comment(lib, "d3dx9.lib")
 #include "render_interface/render_object_base.h"
+#include "model_objects/meshmodel/mesh.h"
+#include "model_objects/meshmodel/texture.h"
 
 /************************************************************************/
 /*                                                                      */
 /************************************************************************/
-struct PosVertex{
-	float _x, _y, _z;
-};
 
 struct ModelVertex;
 class Model : public RenderObjectBase
 {
 public:
-	typedef ModelVertex ModelVertexStruct;
-
-	Model():m_vb(NULL), m_ib(NULL), m_vertex_arr(NULL), m_index_arr(NULL){};
+	Model( const char* filename ){LoadFromFile(filename);};
 	virtual ~Model();
+
+	virtual void Config(){}
 	virtual void PreRender( LPDIRECT3DDEVICE9 device );
 	virtual void Render( LPDIRECT3DDEVICE9 device );
 
 protected:
-	virtual void Config();
+	void LoadFromFile( const char* filename );
+	void LoadByDataSection( DataSection* rootSec );
 
-	LPDIRECT3DVERTEXBUFFER9 m_vb;
-	LPDIRECT3DINDEXBUFFER9 m_ib;
-
-	int m_vertex_size;
-	ModelVertexStruct* m_vertex_arr;
-	
-	int m_index_size;
-	WORD* m_index_arr;
-
-	D3DXMATRIX m_matrix;
+	ModelMesh m_model_mesh;
+	ModelTexture m_model_texture;
 };
 
 #endif 

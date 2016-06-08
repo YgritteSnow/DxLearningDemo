@@ -6,7 +6,7 @@
 class Terrain : public Model
 {
 public:
-	void Config();
+	Terrain( const char* filename ):Model(filename){}
 
 private:
 	float m_range_x;

@@ -5,7 +5,7 @@
 #include <d3dx9.h>
 #pragma comment(lib, "d3dx9.lib")
 
-#include "model_objects/meshmodel/model_material_texture.h"
+#include "model_objects/meshmodel/model.h"
 #include "render_interface/update_base.h"
 
 struct SpriteVertex
@@ -35,10 +35,10 @@ protected:
 	bool _isDead;
 };
 
-class Sprite : public ModelWithMaterialTexture, public UpdateBase
+class Sprite : public Model, public UpdateBase
 {
 public:
-	Sprite():m_sprite_capacity(0), m_sprite_arraysize(0){};
+	Sprite():Model(""), m_sprite_capacity(0), m_sprite_arraysize(0){};
 	virtual ~Sprite(){};
 
 	typedef SpriteVertex ModelVertexStruct;
@@ -55,6 +55,9 @@ protected:
 
 	size_t m_sprite_capacity;
 	size_t m_sprite_arraysize;
+
+	int m_vertex_size;
+	D3DXMATRIX m_matrix;
 };
 
 #endif 

@@ -54,7 +54,7 @@ bool IOFile_ygritte::WriteFile_addRoot( const char* filename, DataSection* in_ro
 bool IOFile_ygritte::WriteFile_useNullRoot( const char* filename, DataSection* in_rootSec )
 {
 	OpenFile( filename, std::ios::out );
-	for( auto it = in_rootSec->children.begin(); it != in_rootSec->children.end(); ++it )
+	for( auto it = in_rootSec->GetChildren().begin(); it != in_rootSec->GetChildren().end(); ++it )
 	{
 		WriteFileData( *it );
 	}
@@ -99,7 +99,7 @@ void IOFile_ygritte::WriteLineData( const DataSectionHelper& dataSec )
 	{
 		m_fstream<<Tag_Space;
 	}
-	m_fstream<<dataSec.sec->name.c_str()<<Tag_Name<<dataSec.sec->data.c_str()<<std::endl;
+	m_fstream<<dataSec.sec->GetNameStr().c_str()<<Tag_Name<<dataSec.sec->GetDataString().c_str()<<std::endl;
 }
 
 bool IOFile_ygritte::ReadFile( const char* filename, DataSection*& out_rootSec )
@@ -180,8 +180,8 @@ bool IOFile_ygritte::ReadLineData( DataSectionHelper& out_rootSec )
 			}
 		}
 		out_rootSec.sec = new DataSection();
-		out_rootSec.sec->name = buf + idx_name;
-		out_rootSec.sec->data = buf + idx_data;
+		out_rootSec.sec->SetName(buf + idx_name);
+		out_rootSec.sec->SetData(buf + idx_data);
 		out_rootSec.depth = idx_name;
 
 		return true;

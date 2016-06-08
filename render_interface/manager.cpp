@@ -34,12 +34,11 @@ ModelManager::ModelManager()
 	s_pCamera = t_cam;
 
 	m_vec_model.push_back( new LightPoint() );
-	m_vec_model.push_back( new Terrain() );
-	m_vec_model.push_back( new ModelWithMaterialTextureAlpha() );
+	//m_vec_model.push_back( new Terrain() );
 	//m_vec_model.push_back( new UIBase() );
 
-	FurrySprite* t_sprite = new FurrySprite();
-	m_vec_model.push_back( t_sprite );
+	//FurrySprite* t_sprite = new FurrySprite();
+	//m_vec_model.push_back( t_sprite );
 
 	GlobalDebugBoard* t_global_board = new GlobalDebugBoard();
 	m_vec_model.push_back( t_global_board );
@@ -59,7 +58,7 @@ ModelManager::ModelManager()
 	m_vec_updater.clear();
 	m_vec_updater.push_back( &g_global_monitor );
 
-	m_vec_updater.push_back( t_sprite );
+	//m_vec_updater.push_back( t_sprite );
 
 	Config();
 }

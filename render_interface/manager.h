@@ -2,10 +2,6 @@
 #define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_INTERFACE_MANAGER_H__
 
 #include "model_objects/meshmodel/model.h"
-#include "model_objects/meshmodel/model_material.h"
-#include "model_objects/meshmodel/model_material_texture.h"
-#include "model_objects/meshmodel/model_material_texture_alpha.h"
-
 #include "camera/camera.h"
 #include "camera/camera_simple_move.h"
 

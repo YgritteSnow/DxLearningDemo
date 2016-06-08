@@ -1,16 +1,19 @@
 #ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READER_DATA_SECTION_H__
 #define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READER_DATA_SECTION_H__
 #include <vector>
+#include <sstream>
 
-struct DataSection;
+class DataSection;
 typedef std::vector< DataSection* > DataSectionVec;
 
-struct DataSection
+class DataSection
 {
+private:
 	std::string name;
-	std::string data;
 	DataSectionVec children;
+	std::stringstream datastream;
 
+public:
 	void AddChild( DataSection* child )
 	{
 		children.push_back( child );
@@ -18,6 +21,55 @@ struct DataSection
 	const DataSectionVec& GetChildren()
 	{
 		return children;
+	}
+	bool GetChildByName( const char* name, DataSection*& childSec )
+	{
+		childSec = NULL;
+		for( auto it = children.begin(); it != children.end(); ++it )
+		{
+			if( strcmp( (*it)->GetNameStr().c_str(), name ) == 0 )
+			{
+				childSec = *it;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	const std::string& GetNameStr()
+	{
+		return name;
+	}
+
+	void SetName( const char* namestr )
+	{
+		name = namestr;
+	}
+
+	template <typename DataType>
+	DataType GetData()
+	{
+		DataType i;
+		datastream >> i;
+		return i;
+	}
+
+	std::string GetDataString()
+	{
+		return datastream.str();
+	}
+	
+	template < typename DataType >
+	void SetData( DataType buf )
+	{
+		datastream.clear();
+		datastream<<buf;
+	}
+	
+	template < typename DataType >
+	void AddData( DataType buf )
+	{
+		datastream<<buf;
 	}
 };
 

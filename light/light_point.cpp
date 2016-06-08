@@ -14,18 +14,14 @@ void LightPoint::Config()
 	m_light.Attenuation0 = 1.0f;
 	//m_light.Falloff = 1.0f;
 	m_light.Range = 10.f;
-
-	m_sunmodel.Config();
 }
 
 void LightPoint::PreRender( LPDIRECT3DDEVICE9 device )
 {
 	Light::PreRender(device);
-	//m_sunmodel.PreRender(device);
 }
 
 void LightPoint::Render( LPDIRECT3DDEVICE9 device )
 {
 	Light::Render(device);
-	//m_sunmodel.Render(device);
 }

@@ -75,15 +75,6 @@
     <ClCompile Include="model_objects/meshmodel/model.cpp">
       <Filter>源文件\model_objects\model</Filter>
     </ClCompile>
-    <ClCompile Include="model_objects/meshmodel/model_material.cpp">
-      <Filter>源文件\model_objects\model</Filter>
-    </ClCompile>
-    <ClCompile Include="model_objects/meshmodel/model_material_texture.cpp">
-      <Filter>源文件\model_objects\model</Filter>
-    </ClCompile>
-    <ClCompile Include="model_objects/meshmodel/model_material_texture_alpha.cpp">
-      <Filter>源文件\model_objects\model</Filter>
-    </ClCompile>
     <ClCompile Include="light/light.cpp">
       <Filter>源文件\light</Filter>
     </ClCompile>
@@ -147,6 +138,9 @@
     <ClCompile Include="model_objects/meshmodel/texture.cpp">
       <Filter>源文件\model_objects\model</Filter>
     </ClCompile>
+    <ClCompile Include="model_objects\meshmodel\mesh.cpp">
+      <Filter>源文件\model_objects\model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="texture_editor/texture_editor.h">
@@ -162,15 +156,6 @@
       <Filter>源文件\model_objects\model</Filter>
     </ClInclude>
     <ClInclude Include="model_objects/meshmodel/model.h">
-      <Filter>源文件\model_objects\model</Filter>
-    </ClInclude>
-    <ClInclude Include="model_objects/meshmodel/model_material.h">
-      <Filter>源文件\model_objects\model</Filter>
-    </ClInclude>
-    <ClInclude Include="model_objects/meshmodel/model_material_texture.h">
-      <Filter>源文件\model_objects\model</Filter>
-    </ClInclude>
-    <ClInclude Include="model_objects/meshmodel/model_material_texture_alpha.h">
       <Filter>源文件\model_objects\model</Filter>
     </ClInclude>
     <ClInclude Include="light/light.h">
@@ -246,6 +231,9 @@
       <Filter>源文件\file_reader</Filter>
     </ClInclude>
     <ClInclude Include="model_objects/meshmodel/texture.h">
+      <Filter>源文件\model_objects\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model_objects\meshmodel\mesh.h">
       <Filter>源文件\model_objects\model</Filter>
     </ClInclude>
   </ItemGroup>
