@@ -5,9 +5,21 @@ ModelTexture::ModelTexture()
 	: m_ptex(NULL)
 	, m_isSpecularEnable(false)
 	, m_isAlphaEnable(false)
-{
+{}
 
-}
+ModelTexture::ModelTexture( const char* filename )
+	: m_ptex(NULL)
+	, m_isSpecularEnable(false)
+	, m_isAlphaEnable(false)
+	, FileReadBase( filename )
+{}
+
+ModelTexture::ModelTexture( DataSection* rootSec )
+	: m_ptex(NULL)
+	, m_isSpecularEnable(false)
+	, m_isAlphaEnable(false)
+	, FileReadBase( rootSec )
+{}
 
 ModelTexture::~ModelTexture()
 {
@@ -18,7 +30,7 @@ ModelTexture::~ModelTexture()
 	}
 };
 
-void ModelTexture::LoadByDataSection( DataSection* rootSec )
+bool ModelTexture::OnLoadByDataSection( DataSection* rootSec )
 {
 	DataSection* childSec = NULL;
 	if( rootSec->GetChildByName( "specularEnable", childSec ) )
@@ -33,9 +45,14 @@ void ModelTexture::LoadByDataSection( DataSection* rootSec )
 	if( rootSec->GetChildByName( "texture", childSec ) )
 	{
 		std::string filename = childSec->GetData<std::string>();
-		FileReaderManager::GetFileReaderManager().ReadFile_texture( filename.c_str(), m_ptex );
+		return FileReaderManager::GetFileReaderManager().ReadFile_texture( filename.c_str(), m_ptex );
+	}
+	else
+	{
+		return false;
 	}
 
+	ZeroMemory( &m_mtl, sizeof(m_mtl) );
 	if( rootSec->GetChildByName( "material", childSec ) )
 	{
 		DataSection* childchild = NULL;
@@ -77,10 +94,14 @@ void ModelTexture::LoadByDataSection( DataSection* rootSec )
 		}
 	}
 
+	return true;
 }
 
 void ModelTexture::Render( LPDIRECT3DDEVICE9 device )
 {
+	if( !IsLoaded() )
+		return;
+
 	device->SetRenderState( D3DRS_ALPHABLENDENABLE, m_isAlphaEnable );
 	if( m_isAlphaEnable )
 	{

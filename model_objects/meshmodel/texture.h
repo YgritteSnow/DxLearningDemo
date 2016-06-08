@@ -7,14 +7,17 @@
 
 #include "render_interface/render_object_base.h"
 #include "file_reader/data_section.h"
+#include "file_reader/file_readee_base.h"
 
-class ModelTexture : public RenderObjectBase
+class ModelTexture : public RenderObjectBase, public FileReadBase
 {
 public:
 	ModelTexture();
+	ModelTexture( const char* filename );
+	ModelTexture( DataSection* rootSec );
 	~ModelTexture();
 
-	void LoadByDataSection( DataSection* rootSec );
+	bool OnLoadByDataSection( DataSection* rootSec );
 
 	virtual void Config(){};
 	virtual void PreRender( LPDIRECT3DDEVICE9 device ){};

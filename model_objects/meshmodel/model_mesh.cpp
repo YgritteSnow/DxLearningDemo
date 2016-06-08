@@ -1,4 +1,4 @@
-#include "model_objects/meshmodel/mesh.h"
+#include "model_objects/meshmodel/model_mesh.h"
 #include "model_objects/model_vertex.h"
 #include "model_objects/meshmodel/mesh_factory.h"
 
@@ -7,19 +7,34 @@ ModelMesh::ModelMesh()
 	, m_d3d_cullmode( D3DCULL_CCW )
 	, m_vb(NULL)
 	, m_ib(NULL)
-	, m_isloaded(false)
+{}
+
+ModelMesh::ModelMesh( const char* filename )
+	: m_d3d_fillmode( D3DFILL_WIREFRAME )
+	, m_d3d_cullmode( D3DCULL_CCW )
+	, m_vb(NULL)
+	, m_ib(NULL)
+	, FileReadBase( filename )
+{}
+
+ModelMesh::ModelMesh( DataSection* rootSec )
+	: m_d3d_fillmode( D3DFILL_WIREFRAME )
+	, m_d3d_cullmode( D3DCULL_CCW )
+	, m_vb(NULL)
+	, m_ib(NULL)
+	, FileReadBase( rootSec )
 {}
 
 ModelMesh::~ModelMesh()
 {
 	if( m_vb )
 	{
-		delete m_vb;
+		m_vb->Release();
 		m_vb = NULL;
 	}
 	if( m_ib )
 	{
-		delete m_ib;
+		m_ib->Release();
 		m_ib = NULL;
 	}
 	if( m_vertex_arr )
@@ -31,7 +46,7 @@ ModelMesh::~ModelMesh()
 
 void ModelMesh::PreRender( LPDIRECT3DDEVICE9 device )
 {
-	if( !m_isloaded )
+	if( !IsLoaded() )
 		return;
 
 	// ¶¥µã»º´æ
@@ -71,7 +86,7 @@ void ModelMesh::PreRender( LPDIRECT3DDEVICE9 device )
 
 void ModelMesh::Render( LPDIRECT3DDEVICE9 device )
 {
-	if( !m_isloaded )
+	if( !IsLoaded() )
 		return;
 
 	device->SetRenderState( D3DRS_FILLMODE, m_d3d_fillmode);
@@ -101,7 +116,7 @@ void terrainDiffFunc( float x, float z, float& dx, float& dy, float& dz ) // ¶þÔ
 	dz = t_vec.z;
 }
 
-void ModelMesh::LoadByDataSection( DataSection* rootSec )
+bool ModelMesh::OnLoadByDataSection( DataSection* rootSec )
 {
 	DataSection* childSec = NULL;
 	if( rootSec->GetChildByName( "cullmode", childSec ) )
@@ -129,9 +144,9 @@ void ModelMesh::LoadByDataSection( DataSection* rootSec )
 			break;
 
 		default:
-			return;
+			return false;
 		}
 	}
 
-	m_isloaded = true;
+	return true;
 }

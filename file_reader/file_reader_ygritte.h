@@ -3,7 +3,6 @@
 #include <fstream>
 #include "file_reader/data_section.h"
 
-class DataSection;
 class IOFile_ygritte
 {
 public:

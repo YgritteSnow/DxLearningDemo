@@ -1,6 +1,9 @@
 #ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READER_FILE_READER_H__
 #define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READER_FILE_READER_H__
 
+#include <d3dx9.h>
+#pragma comment(lib, "d3dx9.lib")
+
 #include "file_reader/file_reader_ygritte.h"
 
 extern LPDIRECT3DDEVICE9 g_d3ddevice;
@@ -22,7 +25,7 @@ public:
 
 	bool ReadFile_texture( const char* filename, LPDIRECT3DTEXTURE9& out_ptex )
 	{
-		return SUCCEEDED( D3DXCreateTextureFromFile( g_d3ddevice, filename, &out_ptex ) );
+		return SUCCEEDED( D3DXCreateTextureFromFileA( g_d3ddevice, filename, &out_ptex ) );
 	}
 
 private:

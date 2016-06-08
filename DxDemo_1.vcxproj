@@ -78,7 +78,8 @@
     <ClCompile Include="model_factory/render_object_factory.cpp" />
     <ClCompile Include="model_objects/model_vertex.cpp" />
     <ClCompile Include="model_objects/meshmodel/texture.cpp" />
-    <ClCompile Include="model_objects\meshmodel\mesh.cpp" />
+    <ClCompile Include="model_objects\meshmodel\model_mesh.cpp" />
+    <ClCompile Include="model_objects\sprite\sprite_mesh.cpp" />
     <ClCompile Include="render_interface/event_handle_base.h" />
     <ClCompile Include="light/light.cpp" />
     <ClCompile Include="light/light_point.cpp" />
@@ -103,6 +104,7 @@
     <ClInclude Include="debug_monitor/global_monitor_fps.h" />
     <ClInclude Include="file_reader/data_section.h" />
     <ClInclude Include="file_reader/file_reader_ygritte.h" />
+    <ClInclude Include="file_reader\file_readee_base.h" />
     <ClInclude Include="game_manager.h" />
     <ClInclude Include="light/light.h" />
     <ClInclude Include="light/light_point.h" />
@@ -113,7 +115,8 @@
     <ClInclude Include="file_reader/file_reader.h" />
     <ClInclude Include="model_objects/model_vertex.h" />
     <ClInclude Include="model_objects/meshmodel/texture.h" />
-    <ClInclude Include="model_objects\meshmodel\mesh.h" />
+    <ClInclude Include="model_objects\meshmodel\model_mesh.h" />
+    <ClInclude Include="model_objects\sprite\sprite_mesh.h" />
     <ClInclude Include="render_interface/manager.h" />
     <ClInclude Include="physics/physics_base.h" />
     <ClInclude Include="render_interface/render_object_base.h" />

@@ -5,21 +5,10 @@
 #include <d3dx9.h>
 #pragma comment(lib, "d3dx9.lib")
 
-#include "model_objects/meshmodel/model.h"
+#include "model_objects/meshmodel/texture.h"
+#include "model_objects/sprite/sprite_mesh.h"
 #include "render_interface/update_base.h"
-
-struct SpriteVertex
-{
-	SpriteVertex( float x, float y, float z, D3DCOLOR c )
-		:_x(x), _y(y), _z(z), _color(c){}
-	SpriteVertex()
-		:_x(0.f), _y(0.f), _z(0.f), _color(0){}
-
-	float _x, _y, _z;
-	D3DCOLOR _color;
-	//float _size;
-	static DWORD FVF;
-};
+#include "file_reader/file_readee_base.h"
 
 class ParticleSprite : public SpriteVertex
 {
@@ -35,15 +24,16 @@ protected:
 	bool _isDead;
 };
 
-class Sprite : public Model, public UpdateBase
+class Sprite : public UpdateBase, public FileReadBase
 {
 public:
-	Sprite():Model(""), m_sprite_capacity(0), m_sprite_arraysize(0){};
+	Sprite( const char* filename ):FileReadBase( filename ){};
 	virtual ~Sprite(){};
 
 	typedef SpriteVertex ModelVertexStruct;
 
-	virtual void Config() = 0;
+	bool OnLoadByDataSection( DataSection* rootSec );
+
 	virtual void PreRender( LPDIRECT3DDEVICE9 device );
 	virtual void Render( LPDIRECT3DDEVICE9 device );
 	virtual void Update( DWORD timeDelta );
@@ -58,6 +48,9 @@ protected:
 
 	int m_vertex_size;
 	D3DXMATRIX m_matrix;
+
+	ModelTexture m_ptex;
+	SpriteMesh m_spirte_mesh;
 };
 
 #endif 

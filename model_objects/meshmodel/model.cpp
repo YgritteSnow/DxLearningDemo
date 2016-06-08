@@ -8,23 +8,18 @@
 /*                                                                      */
 /************************************************************************/
 
-Model::~Model()
-{}
-
-void Model::LoadFromFile( const char* filename )
+bool Model::OnLoadByDataSection( DataSection* rootSec )
 {
-	DataSection* rootSec;
-	FileReaderManager::GetFileReaderManager().ReadFile_dataSec( filename, rootSec );
-	LoadByDataSection( rootSec );
-}
+	bool ret = true;
 
-void Model::LoadByDataSection( DataSection* rootSec )
-{
 	DataSection* childSec = NULL;
-	rootSec->GetChildByName("mesh", childSec );
-	m_model_mesh.LoadByDataSection( childSec );
-	rootSec->GetChildByName("texture", childSec );
-	m_model_texture.LoadByDataSection( childSec );
+	if( !( rootSec->GetChildByName("mesh", childSec ) && m_model_mesh.OnLoadByDataSection( childSec ) ) )
+		return false;
+
+	if( !(rootSec->GetChildByName("texture", childSec ) && m_model_texture.OnLoadByDataSection( childSec ) ) )
+		return false;
+
+	return true;
 }
 
 void Model::PreRender( LPDIRECT3DDEVICE9 device )

@@ -138,8 +138,11 @@
     <ClCompile Include="model_objects/meshmodel/texture.cpp">
       <Filter>源文件\model_objects\model</Filter>
     </ClCompile>
-    <ClCompile Include="model_objects\meshmodel\mesh.cpp">
+    <ClCompile Include="model_objects\meshmodel\model_mesh.cpp">
       <Filter>源文件\model_objects\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model_objects\sprite\sprite_mesh.cpp">
+      <Filter>源文件\model_objects\sprite</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -233,8 +236,14 @@
     <ClInclude Include="model_objects/meshmodel/texture.h">
       <Filter>源文件\model_objects\model</Filter>
     </ClInclude>
-    <ClInclude Include="model_objects\meshmodel\mesh.h">
+    <ClInclude Include="model_objects\sprite\sprite_mesh.h">
+      <Filter>源文件\model_objects\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="model_objects\meshmodel\model_mesh.h">
       <Filter>源文件\model_objects\model</Filter>
+    </ClInclude>
+    <ClInclude Include="file_reader\file_readee_base.h">
+      <Filter>源文件\file_reader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
