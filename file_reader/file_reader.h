@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READER_FILE_READER_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READER_FILE_READER_H__
+#ifndef __FILE_READER_FILE_READER_H__
+#define __FILE_READER_FILE_READER_H__
 
 #include <d3dx9.h>
 #pragma comment(lib, "d3dx9.lib")

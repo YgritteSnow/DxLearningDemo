@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_OBJECTS_SPRITE_SPRITE_BALL_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__MODEL_OBJECTS_SPRITE_SPRITE_BALL_H__
+#ifndef __MODEL_OBJECTS_SPRITE_SPRITE_BALL_H__
+#define __MODEL_OBJECTS_SPRITE_SPRITE_BALL_H__
 
 /************************************************************************/
 /* 从中间向四周发散的粒子，动的时候会拖尾                               */

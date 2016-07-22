@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TEXTURE_EDITOR_TEXTURE_EDITOR_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__TEXTURE_EDITOR_TEXTURE_EDITOR_H__
+#ifndef __TEXTURE_EDITOR_TEXTURE_EDITOR_H__
+#define __TEXTURE_EDITOR_TEXTURE_EDITOR_H__
 
 /************************************************************************/
 /* 用于贴图的静态的处理，然后生成出静态的贴图                           */

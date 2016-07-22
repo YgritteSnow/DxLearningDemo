@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_INTERFACE_MANAGER_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__RENDER_INTERFACE_MANAGER_H__
+#ifndef __RENDER_INTERFACE_MANAGER_H__
+#define __RENDER_INTERFACE_MANAGER_H__
 
 #include "model_objects/meshmodel/model.h"
 #include "camera/camera.h"

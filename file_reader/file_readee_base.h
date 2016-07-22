@@ -1,5 +1,5 @@
-#ifndef __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READR_FILE_READER_H__
-#define __F__MYPROJECTS_DXDEMO_1_DXDEMO_1__FILE_READR_FILE_READER_H__
+#ifndef __FILE_READER_FILE_READEE_BASE_H__
+#define __FILE_READER_FILE_READEE_BASE_H__
 
 #include "file_reader/file_reader.h"
 
@@ -26,4 +26,4 @@ private:
 	void LoadByDataSection( DataSection* rootSec ){ m_isLoaded = OnLoadByDataSection( rootSec ); }
 };
 
-#endif
+#endif 

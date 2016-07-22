@@ -35,7 +35,7 @@ ModelManager::ModelManager()
 
 	m_vec_model.push_back( new LightPoint() );
 	//m_vec_model.push_back( new Terrain() );
-	//m_vec_model.push_back( new UIBase() );
+	m_vec_model.push_back( new UIBase() );
 
 	//FurrySprite* t_sprite = new FurrySprite();
 	//m_vec_model.push_back( t_sprite );
